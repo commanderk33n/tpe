@@ -1,4 +1,4 @@
-package imb.SS14.tpegr01.racewars;
+package imb.SS14.tpegr01.racewars.wesen;
 
 public abstract class Wesen {
 
