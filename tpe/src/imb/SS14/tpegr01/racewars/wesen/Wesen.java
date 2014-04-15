@@ -10,7 +10,7 @@ public abstract class Wesen {
 	private double geschwindigkeit;
 	private double spezialattribut;
 
-	public Wesen(String rasse, int kosten, double lebenspunkte,
+	protected Wesen(String rasse, int kosten, double lebenspunkte,
 			double ruestung, double schaden, double geschwindigkeit,
 			double spezialattribut) {
 		this.rasse = rasse;
