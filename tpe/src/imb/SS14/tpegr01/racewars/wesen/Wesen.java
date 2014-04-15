@@ -11,9 +11,9 @@ public abstract class Wesen {
 	private double geschwindigkeit;
 	private double spezialattribut;
 
-	protected Wesen(String rasse,boolean istHeld, int kosten, double lebenspunkte,
-			double ruestung, double schaden, double geschwindigkeit,
-			double spezialattribut) {
+	protected Wesen(String rasse, boolean istHeld, int kosten,
+			double lebenspunkte, double ruestung, double schaden,
+			double geschwindigkeit, double spezialattribut) {
 		this.rasse = rasse;
 		this.kosten = kosten;
 		this.lebenspunkte = lebenspunkte;
