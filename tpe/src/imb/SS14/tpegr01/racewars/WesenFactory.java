@@ -4,11 +4,6 @@ import imb.SS14.tpegr01.racewars.wesen.*;
 
 public class WesenFactory {
 
-	/*
-	 * Art Kosten Ork 150 Farseer 300 Untote 70 Lich 140 Mensch 110 Erzmagier
-	 * 220 Nachtelf 145 Damonenjager 290 Tabelle: Kosten fur die Wesen
-	 */
-
 	public static enum Rasse {
 		ORKS, MENSCHEN, UNTOTE, NACHTELFEN
 	};
@@ -30,7 +25,7 @@ public class WesenFactory {
 	private static Wesen[] erschaffeOrks(int invest) {
 		int truppenAnzahl = ermittleAnzahl(300, 150, invest);
 		Wesen[] armee = new Wesen[truppenAnzahl];
-		//armee[0] = new Farseer();
+		armee[0] = new Farseer();
 		for (int i = 1; i < truppenAnzahl; i++) {
 			armee[i] = new Ork();
 		}
@@ -40,7 +35,7 @@ public class WesenFactory {
 	private static Wesen[] erschaffeMenschen(int invest) {
 		int truppenAnzahl = ermittleAnzahl(220, 110, invest);
 		Wesen[] armee = new Wesen[truppenAnzahl];
-		//armee[0] = new Erzmagier();
+		armee[0] = new Erzmagier();
 		for (int i = 1; i < truppenAnzahl; i++) {
 			armee[i] = new Mensch();
 		}
@@ -50,7 +45,7 @@ public class WesenFactory {
 	private static Wesen[] erschaffeUntote(int invest) {
 		int truppenAnzahl = ermittleAnzahl(140, 70, invest);
 		Wesen[] armee = new Wesen[truppenAnzahl];
-		//armee[0] = new Lich();
+		armee[0] = new Lich();
 		for (int i = 1; i < truppenAnzahl; i++) {
 			armee[i] = new Untoter();
 		}
@@ -60,7 +55,7 @@ public class WesenFactory {
 	private static Wesen[] erschaffeNachtelfen(int invest) {
 		int truppenAnzahl = ermittleAnzahl(145, 290, invest);
 		Wesen[] armee = new Wesen[truppenAnzahl];
-		//armee[0] = new Daemonenjaeger();
+		armee[0] = new Daemonenjaeger();
 		for (int i = 1; i < truppenAnzahl; i++) {
 			armee[i] = new Nachtelf();
 		}
