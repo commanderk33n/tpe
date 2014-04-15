@@ -5,16 +5,16 @@ import imb.SS14.tpegr01.racewars.wesen.*;
 public class WesenFactory {
 
 	public static enum Rasse {
-		ORKS, MENSCHEN, UNTOTE, NACHTELFEN
+		ORK, MENSCH, UNTOTER, NACHTELF
 	};
 
 	public static Wesen[] erschaffe(int invest, Rasse rasse) {
 		Wesen[] armee;
-		if (rasse == Rasse.ORKS) {
+		if (rasse == Rasse.ORK) {
 			armee = erschaffeOrks(invest);
-		} else if (rasse == Rasse.MENSCHEN) {
+		} else if (rasse == Rasse.MENSCH) {
 			armee = erschaffeMenschen(invest);
-		} else if (rasse == Rasse.UNTOTE) {
+		} else if (rasse == Rasse.UNTOTER) {
 			armee = erschaffeUntote(invest);
 		} else {
 			armee = erschaffeNachtelfen(invest);
