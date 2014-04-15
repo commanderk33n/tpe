@@ -3,6 +3,7 @@ package imb.SS14.tpegr01.racewars.wesen;
 public abstract class Wesen {
 
 	private String rasse;
+	private boolean istHeld;
 	private int kosten;
 	private double lebenspunkte;
 	private double ruestung;
@@ -10,7 +11,7 @@ public abstract class Wesen {
 	private double geschwindigkeit;
 	private double spezialattribut;
 
-	protected Wesen(String rasse, int kosten, double lebenspunkte,
+	protected Wesen(String rasse,boolean istHeld, int kosten, double lebenspunkte,
 			double ruestung, double schaden, double geschwindigkeit,
 			double spezialattribut) {
 		this.rasse = rasse;
@@ -26,12 +27,13 @@ public abstract class Wesen {
 		if (this.lebenspunkte > 0) {
 			return true;
 		} else {
-			return false; // todo remove from squad
+			return false; // todo remove from squad aber nur im Squad- nicht
+							// hier!
 		}
 	}
 
 	public String toString() {
-		String details = "";
+		String details = rasse;
 		return details;
 	}
 
