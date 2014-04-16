@@ -33,6 +33,30 @@ public abstract class Wesen {
 		}
 	}
 
+	public int getKosten() {
+		return kosten;
+	}
+
+	public double getLebenspunkte() {
+		return lebenspunkte;
+	}
+
+	public double getSchaden() {
+		return schaden;
+	}
+
+	public double getGeschwindigkeit() {
+		return geschwindigkeit;
+	}
+
+	public double getRuestung() {
+		return ruestung;
+	}
+
+	public double getSpezialattribut() {
+		return spezialattribut;
+	}
+
 	public String toString() {
 		String details = rasse;
 		return details;
