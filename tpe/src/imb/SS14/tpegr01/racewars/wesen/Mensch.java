@@ -9,5 +9,7 @@ public class Mensch extends Wesen {
 	public Mensch(boolean istHeld, int kosten, double lebenspunkte) {
 		super("Mensch", istHeld, kosten, lebenspunkte, 0.4, 40.0, 2.0, 10.0);
 	}
+	
+	// beschränkeSchaden methode  toDO
 
 }
