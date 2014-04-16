@@ -13,12 +13,32 @@ public class Daemonenjaeger extends Nachtelf implements Helden {
 	}
 	
 	//public void goldschuss(Squad s)
+	public double attacke(Kaempfer r) {
+		if (r instanceof Wesen) {
+			Wesen ziel = (Wesen) r;
+			double verursachterSchaden = berechneSchaden()
+					* name.getBonusfaktor();
+			if (ziel.istHeld()) {
+				verursachterSchaden = verursachterSchaden
+						* kampfGegenHeld((Helden) ziel);
+			}
+			verursachterSchaden -= verursachterSchaden * ziel.getRuestung();
+			return verursachterSchaden;
+		} else {
+			return 0;
+		}
+	}
 
-	public double kampfGegenHeld(Held gegner) {
-		if (gegner.getElement()=="Erde"){
+	public double kampfGegenHeld(Helden gegner) {
+		String feindlichesElement=gegner.getElement();
+		if (feindlichesElement == "Erde"){
 			return 2;
 		}else{
 			return 1;
 		}
+	}
+	
+	public String getElement() {
+		return name.getElement();
 	}
 }

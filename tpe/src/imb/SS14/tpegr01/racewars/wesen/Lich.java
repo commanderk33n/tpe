@@ -11,14 +11,35 @@ public class Lich extends Untoter implements Helden {
 		super(true, Held.LICH.getBonusfaktor());
 		this.name = Held.LICH;
 	}
-	
-	//public void verwesung(Squad s)
 
-	public double kampfGegenHeld(Held gegner) {
-		if (gegner.getElement()=="Feuer"){
+	// public void verwesung(Squad s)
+	public double attacke(Kaempfer r) {
+		if (r instanceof Wesen) {
+			Wesen ziel = (Wesen) r;
+			double verursachterSchaden = berechneSchaden()
+					* name.getBonusfaktor();
+			if (ziel.istHeld()) {
+				verursachterSchaden = verursachterSchaden
+						* kampfGegenHeld((Helden) ziel);
+			}
+			verursachterSchaden -= verursachterSchaden * ziel.getRuestung();
+			return verursachterSchaden;
+		} else {
+			return 0;
+		}
+	}
+
+	public double kampfGegenHeld(Helden gegner) {
+		String feindlichesElement = gegner.getElement();
+		if (feindlichesElement == "Feuer") {
 			return 2;
-		}else{
+		} else {
 			return 1;
 		}
 	}
+
+	public String getElement() {
+		return name.getElement();
+	}
+
 }
