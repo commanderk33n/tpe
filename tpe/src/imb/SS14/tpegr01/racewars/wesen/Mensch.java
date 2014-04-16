@@ -10,6 +10,8 @@ public class Mensch extends Wesen {
 		super("Mensch", istHeld, kosten, lebenspunkte, 0.4, 40.0, 2.0, 10.0);
 	}
 	
-	// beschränkeSchaden methode  toDO
+	protected double beschraenkeSchaden(double damage) { 
+	    return 0; 
+	    } 
 
 }
