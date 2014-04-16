@@ -1,11 +1,13 @@
 package imb.SS14.tpegr01.racewars.wesen;
 
-public abstract class Wesen {
+import imb.SS14.tpegr01.racewars.Kaempfer;
+
+public abstract class Wesen implements Kaempfer {
 
 	private final String rasse;
 	private final boolean istHeld;
 	private final int kosten;
-	private final double lebenspunkte;
+	private double lebenspunkte;
 	private final double ruestung;
 	private final double schaden;
 	private final double geschwindigkeit;
@@ -33,9 +35,61 @@ public abstract class Wesen {
 		}
 	}
 
+	protected double berechneSchaden() {
+		return (geschwindigkeit * schaden * spezialattribut);
+	}
+
+	public double attacke(Kaempfer r) {
+		if (r instanceof Wesen) {
+			Wesen ziel = (Wesen) r;
+			double verursachterSchaden = berechneSchaden();
+			// Schaden von Menschen reduzieren!
+			// Anführer Schaden erhöhen (bonusfaktor)
+			// Anführer Schaden an element anpassen
+			verursachterSchaden -= verursachterSchaden * ziel.getRuestung();
+			return verursachterSchaden;
+		} else {
+			return 0;
+		}
+	}
+
 	public String toString() {
-		String details = rasse;
+		String details = getRasse() + istHeld() + getKosten()
+				+ getLebenspunkte() + getRuestung() + getSchaden()
+				+ getGeschwindigkeit() + getSpezialattribut();
 		return details;
+	}
+
+	public String getRasse() {
+		return this.rasse;
+	}
+
+	public boolean istHeld() {
+		return this.istHeld;
+	}
+
+	public int getKosten() {
+		return this.kosten;
+	}
+
+	public double getLebenspunkte() {
+		return this.lebenspunkte;
+	}
+
+	public double getRuestung() {
+		return this.ruestung;
+	}
+
+	public double getSchaden() {
+		return this.schaden;
+	}
+
+	public double getGeschwindigkeit() {
+		return this.geschwindigkeit;
+	}
+
+	public double getSpezialattribut() {
+		return this.spezialattribut;
 	}
 
 }

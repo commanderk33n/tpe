@@ -5,58 +5,67 @@ import imb.SS14.tpegr01.racewars.wesen.*;
 public class WesenFactory {
 
 	public static enum Rasse {
-		ORK, MENSCH, UNTOTER, NACHTELF
+		ORK(150), MENSCH(110), UNTOTER(70), NACHTELF(145);
+
+		private final int KOSTEN;
+
+		private Rasse(int kosten) {
+			this.KOSTEN = kosten;
+		}
+
+		public int getKosten() {
+			return this.KOSTEN;
+		}
+
+		public int getKostenAnfuehrer() {
+			return this.KOSTEN * 2;
+		}
+
 	};
 
 	public static Wesen[] erschaffe(int invest, Rasse rasse) {
-		Wesen[] armee;
+		int truppenAnzahl = ermittleAnzahl(rasse.getKostenAnfuehrer(),
+				rasse.getKosten(), invest);
+		Wesen[] armee = new Wesen[truppenAnzahl];
 		if (rasse == Rasse.ORK) {
-			armee = erschaffeOrks(invest);
+			armee = erschaffeOrks(armee);
 		} else if (rasse == Rasse.MENSCH) {
-			armee = erschaffeMenschen(invest);
+			armee = erschaffeMenschen(armee);
 		} else if (rasse == Rasse.UNTOTER) {
-			armee = erschaffeUntote(invest);
+			armee = erschaffeUntote(armee);
 		} else {
-			armee = erschaffeNachtelfen(invest);
+			armee = erschaffeNachtelfen(armee);
 		}
 		return armee;
 	}
 
-	private static Wesen[] erschaffeOrks(int invest) {
-		int truppenAnzahl = ermittleAnzahl(300, 150, invest);
-		Wesen[] armee = new Wesen[truppenAnzahl];
+	private static Wesen[] erschaffeOrks(Wesen[] armee) {
 		armee[0] = new Farseer();
-		for (int i = 1; i < truppenAnzahl; i++) {
+		for (int i = 1; i < armee.length; i++) {
 			armee[i] = new Ork();
 		}
 		return armee;
 	}
 
-	private static Wesen[] erschaffeMenschen(int invest) {
-		int truppenAnzahl = ermittleAnzahl(220, 110, invest);
-		Wesen[] armee = new Wesen[truppenAnzahl];
+	private static Wesen[] erschaffeMenschen(Wesen[] armee) {
 		armee[0] = new Erzmagier();
-		for (int i = 1; i < truppenAnzahl; i++) {
+		for (int i = 1; i < armee.length; i++) {
 			armee[i] = new Mensch();
 		}
 		return armee;
 	}
 
-	private static Wesen[] erschaffeUntote(int invest) {
-		int truppenAnzahl = ermittleAnzahl(140, 70, invest);
-		Wesen[] armee = new Wesen[truppenAnzahl];
+	private static Wesen[] erschaffeUntote(Wesen[] armee) {
 		armee[0] = new Lich();
-		for (int i = 1; i < truppenAnzahl; i++) {
+		for (int i = 1; i < armee.length; i++) {
 			armee[i] = new Untoter();
 		}
 		return armee;
 	}
 
-	private static Wesen[] erschaffeNachtelfen(int invest) {
-		int truppenAnzahl = ermittleAnzahl(145, 290, invest);
-		Wesen[] armee = new Wesen[truppenAnzahl];
+	private static Wesen[] erschaffeNachtelfen(Wesen[] armee) {
 		armee[0] = new Daemonenjaeger();
-		for (int i = 1; i < truppenAnzahl; i++) {
+		for (int i = 1; i < armee.length; i++) {
 			armee[i] = new Nachtelf();
 		}
 		return armee;
