@@ -24,7 +24,7 @@ public interface Helden {
 
 	};
 	
-	
-	public abstract double kampfGegenHeld(Held gegner);
+	public abstract String getElement();
+	public abstract double kampfGegenHeld(Helden gegner);
 
 }
