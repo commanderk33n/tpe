@@ -10,6 +10,7 @@ public class Mensch extends Wesen {
 		super("Mensch", istHeld, kosten, lebenspunkte, 0.4, 40.0, 2.0, 10.0);
 	}
 
+
 	protected double berechneSchaden() {
 		double verursachterSchaden= (this.getGeschwindigkeit() * this.getSchaden() * this
 				.getSpezialattribut());
