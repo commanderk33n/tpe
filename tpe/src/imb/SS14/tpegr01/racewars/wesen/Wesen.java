@@ -27,7 +27,7 @@ public abstract class Wesen implements Kaempfer {
 	}
 
 	public boolean isLebendig() {
-		return (this.lebenspunkte == 0) ? false : true;
+		return (this.lebenspunkte <= 0)? false : true; 
 	}
 
 	protected double berechneSchaden() {
