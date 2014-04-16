@@ -27,12 +27,7 @@ public abstract class Wesen implements Kaempfer {
 	}
 
 	public boolean isLebendig() {
-		if (this.lebenspunkte > 0) {
-			return true;
-		} else {
-			return false; // todo remove from squad aber nur im Squad- nicht
-							// hier!
-		}
+		return (this.lebenspunkte == 0) ? false : true;
 	}
 
 	protected double berechneSchaden() {
