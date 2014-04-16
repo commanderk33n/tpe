@@ -1,29 +1,27 @@
 package imb.SS14.tpegr01.racewars.wesen;
 
-import imb.SS14.tpegr01.racewars.Kaempfer;
+import imb.SS14.tpegr01.racewars.interfaces.*;
 
 public abstract class Wesen implements Kaempfer {
 
-	private final String rasse;
+	private final String RASSE;
 	private final boolean istHeld;
-	private final int kosten;
+	private final double RUESTUNG;
+	private final double SCHADEN;
+	private final double GESCHWINDIGKEIT;
+	private final double SPEZIALATTRIBUT;
 	private double lebenspunkte;
-	private final double ruestung;
-	private final double schaden;
-	private final double geschwindigkeit;
-	private final double spezialattribut;
 
-	protected Wesen(String rasse, boolean istHeld, int kosten,
-			double lebenspunkte, double ruestung, double schaden,
-			double geschwindigkeit, double spezialattribut) {
-		this.rasse = rasse;
+	protected Wesen(String rasse, boolean istHeld, double lebenspunkte,
+			double ruestung, double schaden, double geschwindigkeit,
+			double spezialattribut) {
+		this.RASSE = rasse;
 		this.istHeld = istHeld;
-		this.kosten = kosten;
+		this.GESCHWINDIGKEIT = geschwindigkeit;
+		this.RUESTUNG = ruestung;
+		this.SCHADEN = schaden;
+		this.SPEZIALATTRIBUT = spezialattribut;
 		this.lebenspunkte = lebenspunkte;
-		this.geschwindigkeit = geschwindigkeit;
-		this.ruestung = ruestung;
-		this.schaden = schaden;
-		this.spezialattribut = spezialattribut;
 	}
 
 	public boolean isLebendig() {
@@ -36,7 +34,7 @@ public abstract class Wesen implements Kaempfer {
 	}
 
 	protected double berechneSchaden() {
-		return (geschwindigkeit * schaden * spezialattribut);
+		return (GESCHWINDIGKEIT * SCHADEN * SPEZIALATTRIBUT);
 	}
 
 	public double attacke(Kaempfer r) {
@@ -54,22 +52,19 @@ public abstract class Wesen implements Kaempfer {
 	}
 
 	public String toString() {
-		String details = getRasse() + istHeld() + getKosten()
-				+ getLebenspunkte() + getRuestung() + getSchaden()
-				+ getGeschwindigkeit() + getSpezialattribut();
+		String details = "Wesen ist von der Rasse: " + getRasse() + " und ist "
+				+ istHeld() + "hat " + getLebenspunkte() + " Lebenspunkte, "
+				+ getRuestung() + " Rüstung, verursacht " + getSchaden()
+				+ " Schaden, " + getGeschwindigkeit() + getSpezialattribut();
 		return details;
 	}
 
 	public String getRasse() {
-		return this.rasse;
+		return this.RASSE;
 	}
 
 	public boolean istHeld() {
 		return this.istHeld;
-	}
-
-	public int getKosten() {
-		return this.kosten;
 	}
 
 	public double getLebenspunkte() {
@@ -77,19 +72,19 @@ public abstract class Wesen implements Kaempfer {
 	}
 
 	public double getRuestung() {
-		return this.ruestung;
+		return this.RUESTUNG;
 	}
 
 	public double getSchaden() {
-		return this.schaden;
+		return this.SCHADEN;
 	}
 
 	public double getGeschwindigkeit() {
-		return this.geschwindigkeit;
+		return this.GESCHWINDIGKEIT;
 	}
 
 	public double getSpezialattribut() {
-		return this.spezialattribut;
+		return this.SPEZIALATTRIBUT;
 	}
 
 }

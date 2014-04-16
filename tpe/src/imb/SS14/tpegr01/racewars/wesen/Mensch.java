@@ -3,11 +3,11 @@ package imb.SS14.tpegr01.racewars.wesen;
 public class Mensch extends Wesen {
 
 	public Mensch() {
-		this(false, 110, 140.0);
+		this(false, 1.0);
 	}
 
-	public Mensch(boolean istHeld, int kosten, double lebenspunkte) {
-		super("Mensch", istHeld, kosten, lebenspunkte, 0.4, 40.0, 2.0, 10.0);
+	public Mensch(boolean istHeld, double bonusfaktor) {
+		super("Mensch", istHeld, 140.0*bonusfaktor, 0.4, 40.0, 2.0, 10.0);
 	}
 
 
@@ -18,7 +18,7 @@ public class Mensch extends Wesen {
 		return verursachterSchaden;
 	}
 
-	private double beschraenkeSchaden(double damage) {
+	protected double beschraenkeSchaden(double damage) {
 		return (damage - damage * this.getSpezialattribut());
 	}
 

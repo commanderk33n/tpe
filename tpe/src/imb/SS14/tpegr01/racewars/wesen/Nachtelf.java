@@ -3,11 +3,11 @@ package imb.SS14.tpegr01.racewars.wesen;
 public class Nachtelf extends Wesen {
 
 	public Nachtelf() {
-		this(false, 145, 120.0);
+		this(false, 1.0);
 	}
 
-	public Nachtelf(boolean istHeld, int kosten, double lebenspunkte) {
-		super("Nachtelf", istHeld, kosten, lebenspunkte,  0.2, 15.0, 3.0, 2.9);
+	public Nachtelf(boolean istHeld, double bonusfaktor) {
+		super("Nachtelf", istHeld, 120.0 * bonusfaktor, 0.2, 15.0, 3.0, 2.9);
 	}
 
 }

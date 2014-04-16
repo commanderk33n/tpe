@@ -1,11 +1,24 @@
 package imb.SS14.tpegr01.racewars.wesen;
 
-public class Lich extends Untoter {
-	
-	private final double BONUSFAKTOR=2.3;
-	private final String ELEMENT="WASSER";
-	
+import imb.SS14.tpegr01.racewars.interfaces.*;
+import imb.SS14.tpegr01.racewars.interfaces.Helden.Held;
+
+public class Lich extends Untoter implements Helden {
+
+	public Held name;
+
 	public Lich() {
-		super(true, 140, 2.3*120.0);
+		super(true, Held.LICH.getBonusfaktor());
+		this.name = Held.LICH;
+	}
+	
+	//public void verwesung(Squad s)
+
+	public double kampfGegenHeld(Held gegner) {
+		if (gegner.getElement()=="Feuer"){
+			return 2;
+		}else{
+			return 1;
+		}
 	}
 }

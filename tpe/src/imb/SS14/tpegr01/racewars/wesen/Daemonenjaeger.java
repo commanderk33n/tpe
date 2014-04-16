@@ -1,11 +1,24 @@
 package imb.SS14.tpegr01.racewars.wesen;
 
-public class Daemonenjaeger extends Nachtelf{
+import imb.SS14.tpegr01.racewars.interfaces.*;
+import imb.SS14.tpegr01.racewars.interfaces.Helden.Held;
 
-	private final double BONUSFAKTOR=3.0;
-	private final String ELEMENT="Feuer";
-	
+public class Daemonenjaeger extends Nachtelf implements Helden {
+
+	public Held name;
+
 	public Daemonenjaeger() {
-		super(true, 290, 3.0*120.0);
+		super(true, Held.DAEMONENJAEGER.getBonusfaktor());
+		this.name = Held.DAEMONENJAEGER;
+	}
+	
+	//public void goldschuss(Squad s)
+
+	public double kampfGegenHeld(Held gegner) {
+		if (gegner.getElement()=="Erde"){
+			return 2;
+		}else{
+			return 1;
+		}
 	}
 }
