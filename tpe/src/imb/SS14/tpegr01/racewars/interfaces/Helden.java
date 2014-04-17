@@ -22,7 +22,7 @@ public interface Helden {
 			return this.ELEMENT;
 		}
 
-	};
+	}
 	
 	public abstract String getElement();
 	public abstract double kampfGegenHeld(Helden gegner);
