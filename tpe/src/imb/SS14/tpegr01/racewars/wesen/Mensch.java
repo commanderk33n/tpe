@@ -6,7 +6,7 @@ public class Mensch extends Wesen {
 		this(false, 1.0);
 	}
 
-	public Mensch(boolean istHeld, double bonusfaktor) {
+	protected Mensch(boolean istHeld, double bonusfaktor) {
 		super("Mensch", istHeld, 140.0*bonusfaktor, 0.4, 40.0, 2.0, 10.0);
 	}
 
