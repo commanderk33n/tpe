@@ -8,3 +8,4 @@ toDo: (16.04)
 - GameViewer designen ( printGame(GameController game)
 - Junit
 - Simulation
+- JavaDoc!!!!!!!!!!
