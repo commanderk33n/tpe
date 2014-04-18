@@ -1,7 +1,6 @@
 package imb.SS14.tpegr01.racewars;
 
 import imb.SS14.tpegr01.racewars.WesenFactory.Rasse;
-import imb.SS14.tpegr01.racewars.Squad;
 
 public class GameController {
 
@@ -21,8 +20,8 @@ public class GameController {
 		// Spiel beginnt und endet erst wenn ein Squad tot ist
 	}
 
-	public int getRunde() {
-		return this.runde;
+	public static int getRunde() {
+		return runde;
 	}
 	
 	
