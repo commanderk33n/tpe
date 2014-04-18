@@ -5,7 +5,7 @@ import imb.SS14.tpegr01.racewars.wesen.*;
 public class WesenFactory {
 
 	public static enum Rasse {
-		ORK(150), MENSCH(110), UNTOTER(70), NACHTELF(145);
+		ORKS(150), MENSCHEN(110), UNTOTE(70), NACHTELFEN(145);
 
 		private final int KOSTEN;
 
@@ -27,11 +27,11 @@ public class WesenFactory {
 		int truppenAnzahl = ermittleAnzahl(rasse.getKostenAnfuehrer(),
 				rasse.getKosten(), invest);
 		Wesen[] armee = new Wesen[truppenAnzahl];
-		if (rasse == Rasse.ORK) {
+		if (rasse == Rasse.ORKS) {
 			armee = erschaffeOrks(armee);
-		} else if (rasse == Rasse.MENSCH) {
+		} else if (rasse == Rasse.MENSCHEN) {
 			armee = erschaffeMenschen(armee);
-		} else if (rasse == Rasse.UNTOTER) {
+		} else if (rasse == Rasse.UNTOTE) {
 			armee = erschaffeUntote(armee);
 		} else {
 			armee = erschaffeNachtelfen(armee);

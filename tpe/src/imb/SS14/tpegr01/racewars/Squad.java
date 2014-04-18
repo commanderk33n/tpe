@@ -8,18 +8,18 @@ public class Squad {
 	private String name;
 	private Wesen[] armee;
 	int lebendigeWesen;
-	
-	public Squad(String name, Rasse rasse, int invest) {
-		this.name = name;
-		this.armee = rekrutiereArmee(rasse, invest);
-		this.lebendigeWesen = this.armee.length;
-	}
 
-	public Squad(String name, Rasse rasse1, int investRasse1, Rasse rasse2,
-			int investRasse2) {
-		this.name = name;
-		Wesen[] truppe1 = rekrutiereArmee(rasse1, investRasse1);
-		Wesen[] truppe2 = rekrutiereArmee(rasse2, investRasse2);
+	public Squad(Spieler spieler) {
+		this.name = spieler.getSquadName();
+		Wesen[] truppe1 = rekrutiereArmee(spieler.getGewählteKlassen()[0],
+				spieler.gewählteInvestitionen()[0]);
+		Wesen[] truppe2;
+		if (spieler.getGewählteKlassen().length == 2) {
+			truppe2 = rekrutiereArmee(spieler.getGewählteKlassen()[1],
+					spieler.gewählteInvestitionen()[1]);
+		} else{
+			truppe2=new Wesen[0];
+		}
 		this.armee = new Wesen[truppe1.length + truppe2.length];
 		for (int i = 0; i < armee.length; i++) {
 			if (i < truppe1.length) {
@@ -30,6 +30,7 @@ public class Squad {
 		}
 		this.lebendigeWesen = this.armee.length;
 	}
+
 
 	private Wesen[] rekrutiereArmee(Rasse rasse, int invest) {
 		Wesen[] armee = WesenFactory.erschaffe(rasse, invest);
@@ -52,14 +53,14 @@ public class Squad {
 	public int getLebendige() {
 		return this.lebendigeWesen;
 	}
-	
+
 	public String toString() {
 		String info = "";
-		for(int i = 0; i < armee.length; i++) {
-			info += armee[i].getRasse() + "   "
-					+ armee[i].getLebenspunkte() + "\r";
+		for (int i = 0; i < armee.length; i++) {
+			info += armee[i].getRasse() + "\t" + armee[i].getLebenspunkte()
+					+ "\n";
 		}
-		
+
 		return info;
 	}
 
