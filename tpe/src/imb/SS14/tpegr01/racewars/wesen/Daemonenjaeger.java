@@ -1,7 +1,6 @@
 package imb.SS14.tpegr01.racewars.wesen;
 
 import imb.SS14.tpegr01.racewars.interfaces.*;
-import imb.SS14.tpegr01.racewars.interfaces.Helden.Held;
 
 public class Daemonenjaeger extends Nachtelf implements Helden {
 
