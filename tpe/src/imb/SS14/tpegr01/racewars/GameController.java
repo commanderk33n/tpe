@@ -13,7 +13,7 @@ public class GameController {
 		
 		// ggf. Ermittlung von String in Rasse hier mit Methode ("Untote" -> Rasse.UNTOTER)
 		this.spieler1 = new Spieler("The walking Dead", Rasse.UNTOTER, 2000);
-		this.spieler2 = new Spieler("Homo-Truppe", Rasse.NACHTELF, 1700, Rasse.MENSCH, 300);
+		this.spieler2 = new Spieler("Homo-Truppe", Rasse.NACHTELF, 1200, Rasse.MENSCH, 800);
 	}
 
 	public void runGame() {
