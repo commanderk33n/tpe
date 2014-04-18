@@ -23,7 +23,7 @@ public class WesenFactory {
 
 	};
 
-	public static Wesen[] erschaffe(int invest, Rasse rasse) {
+	public static Wesen[] erschaffe(Rasse rasse, int invest) {
 		int truppenAnzahl = ermittleAnzahl(rasse.getKostenAnfuehrer(),
 				rasse.getKosten(), invest);
 		Wesen[] armee = new Wesen[truppenAnzahl];
