@@ -4,8 +4,8 @@ import imb.SS14.tpegr01.racewars.WesenFactory.Rasse;
 
 public class Spieler {
 	private int konto;
-	private Rasse[] gewählteKlassen;
-	private int[] gewählteInvestitionen;
+	private Rasse[] gewaehlteKlassen;
+	private int[] gewaehlteInvestitionen;
 	private String squadname;
 
 	public Spieler(String name, String rasse1, int investRasse1) {
@@ -17,14 +17,14 @@ public class Spieler {
 		this.squadname = name;
 		setKonto();
 		if (rasse2 != null) {
-			this.gewählteKlassen = new Rasse[] { pruefeKlasse(rasse1),
+			this.gewaehlteKlassen = new Rasse[] { pruefeKlasse(rasse1),
 					pruefeKlasse(rasse2) };
-			this.gewählteInvestitionen = new int[] {
+			this.gewaehlteInvestitionen = new int[] {
 					pruefeInvestition(investRasse1),
 					pruefeInvestition(investRasse2) };
 		} else {
-			this.gewählteKlassen = new Rasse[] { pruefeKlasse(rasse1) };
-			this.gewählteInvestitionen = new int[] { pruefeInvestition(investRasse1) };
+			this.gewaehlteKlassen = new Rasse[] { pruefeKlasse(rasse1) };
+			this.gewaehlteInvestitionen = new int[] { pruefeInvestition(investRasse1) };
 		}
 	}
 
@@ -49,7 +49,7 @@ public class Spieler {
 	// Seiteneffekt erwünscht, da Konto Geld verliert!
 	private int pruefeInvestition(int invest) {
 		int rest = this.konto - invest;
-		if (invest < 0) {
+		if (rest < 0) {
 			rest = this.konto;
 			this.konto = 0;
 			return rest;
@@ -61,11 +61,11 @@ public class Spieler {
 
 	public String toString(int spieler) {
 		String info = "Der Spieler wählt in das Team '" + this.squadname + "' "
-				+ this.gewählteKlassen[0] + " mit "
-				+ this.gewählteInvestitionen[0] + " Elfendoller";
-		if (this.gewählteKlassen.length == 2) {
-			info += " und " + this.gewählteKlassen[1] + " mit "
-					+ this.gewählteInvestitionen[1] + " Elfendoller";
+				+ this.gewaehlteKlassen[0] + " mit "
+				+ this.gewaehlteInvestitionen[0] + " Elfendoller";
+		if (this.gewaehlteKlassen.length == 2) {
+			info += " und " + this.gewaehlteKlassen[1] + " mit "
+					+ this.gewaehlteInvestitionen[1] + " Elfendoller";
 		}
 		return info;
 	}
@@ -75,10 +75,10 @@ public class Spieler {
 	}
 
 	public int[] gewählteInvestitionen() {
-		return this.gewählteInvestitionen;
+		return this.gewaehlteInvestitionen;
 	}
 
-	public Rasse[] getGewählteKlassen() {
-		return this.gewählteKlassen;
+	public Rasse[] getGewaehlteKlassen() {
+		return this.gewaehlteKlassen;
 	}
 }
