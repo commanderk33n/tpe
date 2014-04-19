@@ -12,11 +12,11 @@ public class Squad {
 	public Squad(Spieler spieler) {
 		this.name = spieler.getSquadName();
 		Wesen[] truppe1 = rekrutiereArmee(spieler.getGewaehlteKlassen()[0],
-				spieler.gewählteInvestitionen()[0]);
+				spieler.gewaehlteInvestitionen()[0]);
 		Wesen[] truppe2;
 		if (spieler.getGewaehlteKlassen().length == 2) {
 			truppe2 = rekrutiereArmee(spieler.getGewaehlteKlassen()[1],
-					spieler.gewählteInvestitionen()[1]);
+					spieler.gewaehlteInvestitionen()[1]);
 		} else{
 			truppe2=new Wesen[0];
 		}

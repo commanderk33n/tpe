@@ -74,7 +74,7 @@ public class Spieler {
 		return this.squadname;
 	}
 
-	public int[] gewählteInvestitionen() {
+	public int[] gewaehlteInvestitionen() {
 		return this.gewaehlteInvestitionen;
 	}
 
