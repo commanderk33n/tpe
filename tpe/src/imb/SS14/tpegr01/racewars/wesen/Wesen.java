@@ -25,7 +25,7 @@ public abstract class Wesen implements Kaempfer {
 	}
 
 	public boolean isLebendig() {
-		return (this.lebenspunkte <= 0)? false : true; 
+		return (this.lebenspunkte <= 0) ? false : true;
 	}
 
 	protected double berechneSchaden() {
@@ -35,15 +35,19 @@ public abstract class Wesen implements Kaempfer {
 	public double attacke(Kaempfer r) {
 		if (r instanceof Wesen) {
 			Wesen ziel = (Wesen) r;
-			double verursachterSchaden = berechneSchaden();
+			double schaden = berechneSchaden();
 			// Schaden von Menschen reduzieren!
 			// Anführer Schaden erhöhen (bonusfaktor)
 			// Anführer Schaden an element anpassen
-			verursachterSchaden -= verursachterSchaden * ziel.getRuestung();
-			return verursachterSchaden;
+			return schaden;
 		} else {
 			return 0;
 		}
+	}
+
+	public void bekommtSchaden(double schaden) {
+		schaden -= schaden * this.getRuestung();
+		this.lebenspunkte -= schaden;
 	}
 
 	public String toString() {
@@ -80,6 +84,10 @@ public abstract class Wesen implements Kaempfer {
 
 	public double getSpezialattribut() {
 		return this.SPEZIALATTRIBUT;
+	}
+	
+	public String getName(){
+			return this.getRasse();
 	}
 
 }

@@ -17,7 +17,19 @@ public class GameController {
 	}
 
 	public void runGame() {
-		// Spiel beginnt und endet erst wenn ein Squad tot ist
+		GameViewer.printGame(this);
+		while (spieler1.lebendigeWesen > 0 && spieler2.lebendigeWesen > 0) {
+			if (istSpieler1AnDerReihe) {
+				spieler2.wirdAngegriffen(spieler1);
+			} else {
+				spieler1.wirdAngegriffen(spieler2);
+			}
+			runde++;
+			this.istSpieler1AnDerReihe = !this.istSpieler1AnDerReihe;
+			// GameViewer.printDetails(this);
+			GameViewer.printGame(this);
+		}
+		GameViewer.printResult(this);
 	}
 
 	public int getRunde() {
@@ -28,30 +40,17 @@ public class GameController {
 		Spieler spieler1 = new Spieler("The walking Dead", "untote", 4224);
 		Spieler spieler2 = new Spieler("Letzter Bund gegen Sauron",
 				"Nachtelfen", 1334, "menschen", 666);
-		GameController gameONE = new GameController(spieler1, spieler2);
-		// GameViewer.printGame(gameONE);
-		GameViewer.printDetails(gameONE);
+		Spieler spieler3 = new Spieler("Orks von Amon Sûl", "orks", 2000);
+		Spieler spieler4 = new Spieler("Hipster-BOYZ", "menschen", 2000);
+		GameController gameONE = new GameController(spieler4, spieler1);
+		GameController gameTWO = new GameController(spieler3, spieler2);
+		gameONE.runGame();
+		gameTWO.runGame();
 
 	}
 
-	public String getSpieler(int spieler) {
-		Squad ausgabe = spieler1;
-		if (spieler == 2) {
-			ausgabe = spieler2;
-		}
-		String info = "'" + ausgabe.getName() + "' besitzt "
-				+ ausgabe.getLebendige() + " lebendige Wesen.";
-		return info;
-
-	}
-
-	public String getDetailsSpieler(int spieler) {
-		Squad ausgabe = spieler1;
-		if (spieler == 2) {
-			ausgabe = spieler2;
-		}
-		String info = ausgabe.toString();
-		return info;
+	public Squad[] getSquads() {
+		return new Squad[] { this.spieler1, this.spieler2 };
 	}
 
 }

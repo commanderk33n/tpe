@@ -22,7 +22,6 @@ public class Erzmagier extends Mensch implements Helden {
 				verursachterSchaden = verursachterSchaden
 						* kampfGegenHeld((Helden) ziel);
 			}
-			verursachterSchaden -= verursachterSchaden * ziel.getRuestung();
 			return verursachterSchaden;
 		} else {
 			return 0;
@@ -40,6 +39,10 @@ public class Erzmagier extends Mensch implements Helden {
 
 	public String getElement() {
 		return name.getElement();
+	}
+
+	public String getName() {
+		return "Erzmagier";
 	}
 
 }

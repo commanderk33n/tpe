@@ -21,7 +21,6 @@ public class Lich extends Untoter implements Helden {
 				verursachterSchaden = verursachterSchaden
 						* kampfGegenHeld((Helden) ziel);
 			}
-			verursachterSchaden -= verursachterSchaden * ziel.getRuestung();
 			return verursachterSchaden;
 		} else {
 			return 0;
@@ -39,6 +38,10 @@ public class Lich extends Untoter implements Helden {
 
 	public String getElement() {
 		return name.getElement();
+	}
+
+	public String getName() {
+		return "Lich";
 	}
 
 }

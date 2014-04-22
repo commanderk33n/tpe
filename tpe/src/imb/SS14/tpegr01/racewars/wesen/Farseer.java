@@ -21,7 +21,6 @@ public class Farseer extends Ork implements Helden {
 				verursachterSchaden = verursachterSchaden
 						* kampfGegenHeld((Helden) ziel);
 			}
-			verursachterSchaden -= verursachterSchaden * ziel.getRuestung();
 			return verursachterSchaden;
 		} else {
 			return 0;
@@ -39,5 +38,9 @@ public class Farseer extends Ork implements Helden {
 
 	public String getElement() {
 		return name.getElement();
+	}
+
+	public String getName() {
+		return "Farseer";
 	}
 }

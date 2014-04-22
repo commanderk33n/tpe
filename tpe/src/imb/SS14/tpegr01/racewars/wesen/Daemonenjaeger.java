@@ -10,8 +10,8 @@ public class Daemonenjaeger extends Nachtelf implements Helden {
 		super(true, Held.DAEMONENJAEGER.getBonusfaktor());
 		this.name = Held.DAEMONENJAEGER;
 	}
-	
-	//public void goldschuss(Squad s)
+
+	// public void goldschuss(Squad s)
 	public double attacke(Kaempfer r) {
 		if (r instanceof Wesen) {
 			Wesen ziel = (Wesen) r;
@@ -21,7 +21,6 @@ public class Daemonenjaeger extends Nachtelf implements Helden {
 				verursachterSchaden = verursachterSchaden
 						* kampfGegenHeld((Helden) ziel);
 			}
-			verursachterSchaden -= verursachterSchaden * ziel.getRuestung();
 			return verursachterSchaden;
 		} else {
 			return 0;
@@ -29,15 +28,19 @@ public class Daemonenjaeger extends Nachtelf implements Helden {
 	}
 
 	public double kampfGegenHeld(Helden gegner) {
-		String feindlichesElement=gegner.getElement();
-		if (feindlichesElement == "Erde"){
+		String feindlichesElement = gegner.getElement();
+		if (feindlichesElement == "Erde") {
 			return 2;
-		}else{
+		} else {
 			return 1;
 		}
 	}
-	
+
 	public String getElement() {
 		return name.getElement();
+	}
+
+	public String getName() {
+		return "Dämonenjäger";
 	}
 }
