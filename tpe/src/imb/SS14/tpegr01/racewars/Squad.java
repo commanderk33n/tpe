@@ -3,12 +3,42 @@ package imb.SS14.tpegr01.racewars;
 import imb.SS14.tpegr01.racewars.WesenFactory.Rasse;
 import imb.SS14.tpegr01.racewars.wesen.Wesen;
 
+/**
+ * Die Klasse <code>Squad</code> stellt das Team der gewählten Wesen eines
+ * Spielers dar. Die Wesen werden in einem Array gespeichert, dem Squad wird
+ * auch ein Name zugeordnet und es zählt die Anzahl der lebendigen Wesen des
+ * Arrays. Ein Objetct dieser Klasse kann nur mit einem Object der Klasse
+ * <code>Spieler</code> erstellt werden.
+ * <p>
+ * 
+ * <p>
+ * <blockquote>
+ * 
+ * <pre>
+ * Squad squad1 = new Squad(spieler);
+ * </p>
+ * </blockquote></pre>
+ * 
+ * @author Tim Hubert
+ * @author Torsten Müller
+ * @author Philipp Siebert
+ */
+
 public class Squad {
 
 	private String name;
 	private Wesen[] armee;
 	int lebendigeWesen;
 
+	/**
+	 * Erstellt ein Object der Klasse <code>Squad</code> mit einem Parameter der
+	 * Klasse <code>Spieler</code>,die feststellt welche Rassen und
+	 * Investitionen der Spieler gewählt hat und mit der Methode
+	 * rekrutiereArmee(Rasse rasse, int invest) die Wesen erstellt.
+	 * 
+	 * @param spieler
+	 *            Spieler dessen Squad erstellt werden soll
+	 */
 	public Squad(Spieler spieler) {
 		this.name = spieler.getSquadName();
 		Wesen[] truppe1 = rekrutiereArmee(spieler.getGewaehlteKlassen()[0],
@@ -31,48 +61,119 @@ public class Squad {
 		this.lebendigeWesen = this.armee.length;
 	}
 
+	/**
+	 * Erstellt mithilfe der statischen Klasse <code>Wesenfactory</code> die
+	 * Wesen und in einem Array zurückgibt
+	 * 
+	 * @param rasse
+	 *            Rasse, der die erzeugten Wesen angehören sollen.
+	 * @param invest
+	 *            Investition in die angegebene Rasse, die angibt wie viele
+	 *            Wesen erstellt werden anhand der Kosten der Wesen dieser
+	 *            Rasse.
+	 * @return Array of Wesen, indem alle erzeugten Wesen zurückgegeben werden.
+	 */
 	private Wesen[] rekrutiereArmee(Rasse rasse, int invest) {
 		Wesen[] armee = WesenFactory.erschaffe(rasse, invest);
 		return armee;
 	}
 
-	public void kampftest(int index) {
+	/**
+	 * Überprüft ob das Wesen an der Stelle index des Arrays noch Lebenspunkte
+	 * besitzt und weiterkämpfen kann oder nicht. Falls es nicht mehr kämpfen
+	 * kann wird mit der Methode restlicheTruppen(index) ein neues Array
+	 * erstellt, das alle Wesen übernimmt außer das an der Position des Wesens
+	 * ohne Lebendspunkte beinhaltet.
+	 * 
+	 * @param index
+	 *            Position des Wesens im Array
+	 */
+	public void kampffaehig(int index) {
 		if (!armee[index].isLebendig()) {
 			lebendigeWesen--;
 			if (this.lebendigeWesen > 0) {
-				Wesen gestorbenesWesen = armee[index];
-				armee[index] = armee[lebendigeWesen];
-				armee[lebendigeWesen] = gestorbenesWesen;
+				armee = restlicheTruppen(index);
 			}
 		}
 	}
 
+	/**
+	 * Erstellt ein neues Array, das alle Wesen übernimmt außer das an der
+	 * Position des Wesens ohne Lebendspunkte beinhaltet.
+	 * 
+	 * @param index
+	 *            Position des Wesens ohne Lebendspunkte
+	 * @return Array mit den restlichen Wesen
+	 */
+	private Wesen[] restlicheTruppen(int index) {
+		Wesen[] neueArmee = new Wesen[lebendigeWesen];
+		int indexAlt = 0;
+		for (int indexNeu = 0; indexNeu < neueArmee.length; indexNeu++) {
+			if (index == indexAlt) {
+				indexAlt++;
+			}
+			neueArmee[indexNeu] = armee[indexAlt];
+			indexAlt++;
+		}
+		return neueArmee;
+	}
+
+	/**
+	 * 
+	 * @param angreifendesSquad
+	 */
 	public void wirdAngegriffen(Squad angreifendesSquad) {
 		for (int i = 0; i < angreifendesSquad.lebendigeWesen; i++) {
 			if (this.lebendigeWesen > 0) {
 				Wesen angreifer = angreifendesSquad.getWesen(i);
-				int opferindex = getOpferIndex();
-				double schaden = angreifer.attacke(this.armee[opferindex]);
-				this.armee[opferindex].bekommtSchaden(schaden);
-				kampftest(opferindex);
+				int opferindex = zufallsIndex();
+				Wesen opfer = this.armee[opferindex];
+				double schaden = angreifer.attacke(opfer);
+				GameViewer.printAngriff(angreifer, opfer, schaden);
+				kampffaehig(opferindex);
 			} else {
 				break;
 			}
 		}
 	}
 
-	private int getOpferIndex() {
+	/**
+	 * Erstellt eine Zufällige Zahl, die als Indexwert des Wesenarrays verwendet
+	 * wird um einen Gegner zu ermitteln.
+	 * 
+	 * @return einen zufälligen ganzahligen Wert zwischen 0 und der Anzahl der
+	 *         Wesen.
+	 */
+	public int zufallsIndex() {
 		return (int) (Math.random() * this.lebendigeWesen);
 	}
 
+	/**
+	 * Gibt den Namen des Squads aus
+	 * 
+	 * @return Name des Squads
+	 */
 	public String getName() {
 		return this.name;
 	}
 
+	/**
+	 * Gibt die Anzahl der lebenden Wesen des Squads aus
+	 * 
+	 * @return Anzahl der Wesen mit Lebenspunkten
+	 */
 	public int getLebendige() {
 		return this.lebendigeWesen;
 	}
 
+	/**
+	 * Gibt das Wesen an der Position index innherhalb des Wesenarrays
+	 * 
+	 * @param index
+	 *            Position des Wesens innherhalb des Wesenarrays das
+	 *            zurückgegeben werden soll
+	 * @return Wesen an der Position index
+	 */
 	public Wesen getWesen(int index) {
 		if (index < armee.length) {
 			return this.armee[index];
@@ -81,6 +182,9 @@ public class Squad {
 		}
 	}
 
+	/**
+	 * Gibt zu jedem Wesen des Arrays die Rasse und die Lebenspunkte aus.
+	 */
 	public String toString() {
 		String info = "";
 		for (int i = 0; i < armee.length; i++) {

@@ -1,34 +1,36 @@
 package imb.SS14.tpegr01.racewars.wesen;
 
 import imb.SS14.tpegr01.racewars.interfaces.*;
+import imb.SS14.tpegr01.racewars.Squad;
 
 public class Lich extends Untoter implements Helden {
 
 	public Held name;
+	private int spezialangriffRunde;
 
 	public Lich() {
 		super(true, Held.LICH.getBonusfaktor());
 		this.name = Held.LICH;
+		this.spezialangriffRunde = 0;
 	}
 
-	// public void verwesung(Squad s)
-	public double attacke(Kaempfer r) {
-		if (r instanceof Wesen) {
-			Wesen ziel = (Wesen) r;
-			double verursachterSchaden = berechneSchaden()
-					* name.getBonusfaktor();
-			if (ziel.istHeld()) {
-				verursachterSchaden = verursachterSchaden
-						* kampfGegenHeld((Helden) ziel);
-			}
-			return verursachterSchaden;
-		} else {
-			return 0;
+	public void spezialfunktion(Squad s, int runde) {
+		if (runde > spezialangriffRunde) {
+			verwesung(s);
+			spezialangriffRunde = runde;
 		}
 	}
 
-	public double kampfGegenHeld(Helden gegner) {
-		String feindlichesElement = gegner.getElement();
+	private void verwesung(Squad s) {
+		for (int i = 0; i < s.getLebendige(); i++) {
+			s.getWesen(i).bekommtSchaden(7);
+		}
+		this.bekommtSchaden(-7 * s.getLebendige());
+
+	}
+
+	public double elementBonus(Helden ziel) {
+		String feindlichesElement = ziel.getElement();
 		if (feindlichesElement == "Feuer") {
 			return 2;
 		} else {

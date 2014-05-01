@@ -7,7 +7,7 @@ public class Untoter extends Wesen {
 	}
 
 	protected Untoter(boolean istHeld, double bonusfaktor) {
-		super("Untoter", istHeld, 120.0 * bonusfaktor, 0.3, 33.0, 1.0, 4.0);
+		super("Untoter", istHeld, 120.0, 0.3, 16.0, 2.0, 1.6, bonusfaktor);
 	}
 
 }

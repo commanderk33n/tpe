@@ -7,7 +7,7 @@ public class Ork extends Wesen {
 	}
 
 	protected Ork(boolean istHeld, double bonusfaktor) {
-		super("Ork", istHeld, 100.0 * bonusfaktor, 0.3, 33.0, 1.0, 4.0);
+		super("Ork", istHeld, 100.0, 0.3, 33.0, 1.0, 4.0, bonusfaktor);
 	}
 
 }

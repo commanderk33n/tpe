@@ -10,18 +10,20 @@ public abstract class Wesen implements Kaempfer {
 	private final double SCHADEN;
 	private final double GESCHWINDIGKEIT;
 	private final double SPEZIALATTRIBUT;
-	private double lebenspunkte;
+	private final double BONUS;
+	private int lebenspunkte;
 
 	protected Wesen(String rasse, boolean istHeld, double lebenspunkte,
 			double ruestung, double schaden, double geschwindigkeit,
-			double spezialattribut) {
+			double spezialattribut, double bonus) {
 		this.RASSE = rasse;
 		this.istHeld = istHeld;
 		this.GESCHWINDIGKEIT = geschwindigkeit;
 		this.RUESTUNG = ruestung;
 		this.SCHADEN = schaden;
 		this.SPEZIALATTRIBUT = spezialattribut;
-		this.lebenspunkte = lebenspunkte;
+		this.lebenspunkte = (int) (lebenspunkte * bonus);
+		this.BONUS = bonus;
 	}
 
 	public boolean isLebendig() {
@@ -29,33 +31,51 @@ public abstract class Wesen implements Kaempfer {
 	}
 
 	protected double berechneSchaden() {
-		return (GESCHWINDIGKEIT * SCHADEN * SPEZIALATTRIBUT);
+		double damage = (GESCHWINDIGKEIT * SCHADEN * SPEZIALATTRIBUT * BONUS);
+		damage = this.beschraenkeSchaden(damage);
+		return damage;
 	}
 
 	public double attacke(Kaempfer r) {
 		if (r instanceof Wesen) {
 			Wesen ziel = (Wesen) r;
 			double schaden = berechneSchaden();
-			// Schaden von Menschen reduzieren!
-			// Anführer Schaden erhöhen (bonusfaktor)
-			// Anführer Schaden an element anpassen
+			if (ziel.istHeld) {
+				schaden *= elementBonus((Helden) ziel);
+			}
+			schaden -= schaden * ziel.getRuestung();
+			ziel.bekommtSchaden(schaden);
 			return schaden;
 		} else {
 			return 0;
 		}
 	}
 
+	protected double beschraenkeSchaden(double damage) {
+		return damage;
+	}
+
+	private double elementBonus(Helden ziel) {
+		return 1;
+	}
+
 	public void bekommtSchaden(double schaden) {
-		schaden -= schaden * this.getRuestung();
-		this.lebenspunkte -= schaden;
+		this.setLebenspunkte((int) (this.lebenspunkte - schaden));
+	}
+
+	protected void setLebenspunkte(int wert) {
+		this.lebenspunkte = wert;
 	}
 
 	public String toString() {
-		String details = "Wesen ist von der Rasse: " + getRasse() + " und ist "
-				+ istHeld() + "hat " + getLebenspunkte() + " Lebenspunkte, "
-				+ getRuestung() + " Rüstung, verursacht " + getSchaden()
-				+ " Schaden, " + getGeschwindigkeit() + getSpezialattribut();
+		String details = "Wesen ist von der Rasse: " + getRasse() + " hat "
+				+ getLebenspunkte() + " Lebenspunkte, " + getRuestung()
+				+ " Rüstung und verursacht " + getSchaden() + " Schaden.";
 		return details;
+	}
+
+	protected void ausslöschen() {
+		this.lebenspunkte = 0;
 	}
 
 	public String getRasse() {
@@ -85,9 +105,8 @@ public abstract class Wesen implements Kaempfer {
 	public double getSpezialattribut() {
 		return this.SPEZIALATTRIBUT;
 	}
-	
-	public String getName(){
-			return this.getRasse();
-	}
 
+	public String getName() {
+		return this.getRasse();
+	}
 }

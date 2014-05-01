@@ -7,7 +7,7 @@ public class Nachtelf extends Wesen {
 	}
 
 	protected Nachtelf(boolean istHeld, double bonusfaktor) {
-		super("Nachtelf", istHeld, 120.0 * bonusfaktor, 0.2, 15.0, 3.0, 2.9);
+		super("Nachtelf", istHeld, 120.0, 0.2, 15.0, 3.0, 2.9,bonusfaktor);
 	}
 
 }

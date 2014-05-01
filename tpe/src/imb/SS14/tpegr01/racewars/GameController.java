@@ -1,7 +1,5 @@
 package imb.SS14.tpegr01.racewars;
 
-import imb.SS14.tpegr01.racewars.WesenFactory.Rasse;
-
 public class GameController {
 
 	private int runde;
@@ -26,7 +24,7 @@ public class GameController {
 			}
 			runde++;
 			this.istSpieler1AnDerReihe = !this.istSpieler1AnDerReihe;
-			// GameViewer.printDetails(this);
+			//GameViewer.printDetails(this);
 			GameViewer.printGame(this);
 		}
 		GameViewer.printResult(this);
@@ -41,10 +39,10 @@ public class GameController {
 		Spieler spieler2 = new Spieler("Letzter Bund gegen Sauron",
 				"Nachtelfen", 1334, "menschen", 666);
 		Spieler spieler3 = new Spieler("Orks von Amon Sûl", "orks", 2000);
-		Spieler spieler4 = new Spieler("Hipster-BOYZ", "menschen", 2000);
+		Spieler spieler4 = new Spieler("Hipster-Horde", "menschen", 2000);
 		GameController gameONE = new GameController(spieler4, spieler1);
 		GameController gameTWO = new GameController(spieler3, spieler2);
-		gameONE.runGame();
+		//gameONE.runGame();
 		gameTWO.runGame();
 
 	}

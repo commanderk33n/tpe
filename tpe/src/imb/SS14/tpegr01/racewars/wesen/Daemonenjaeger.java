@@ -1,34 +1,34 @@
 package imb.SS14.tpegr01.racewars.wesen;
 
 import imb.SS14.tpegr01.racewars.interfaces.*;
+import imb.SS14.tpegr01.racewars.Squad;
 
 public class Daemonenjaeger extends Nachtelf implements Helden {
 
 	public Held name;
+	private int spezialangriffRunde;
 
 	public Daemonenjaeger() {
 		super(true, Held.DAEMONENJAEGER.getBonusfaktor());
 		this.name = Held.DAEMONENJAEGER;
+		this.spezialangriffRunde = 0;
 	}
 
-	// public void goldschuss(Squad s)
-	public double attacke(Kaempfer r) {
-		if (r instanceof Wesen) {
-			Wesen ziel = (Wesen) r;
-			double verursachterSchaden = berechneSchaden()
-					* name.getBonusfaktor();
-			if (ziel.istHeld()) {
-				verursachterSchaden = verursachterSchaden
-						* kampfGegenHeld((Helden) ziel);
-			}
-			return verursachterSchaden;
-		} else {
-			return 0;
+	public void spezialfunktion(Squad s, int runde) {
+		if (runde > spezialangriffRunde) {
+			goldschuss(s);
+			spezialangriffRunde = runde;
 		}
 	}
 
-	public double kampfGegenHeld(Helden gegner) {
-		String feindlichesElement = gegner.getElement();
+	public void goldschuss(Squad s) {
+		for (int i = 0; i < s.getLebendige(); i++) {
+			s.getWesen(i).bekommtSchaden(25);
+		}
+	}
+
+	public double elementBonus(Helden ziel) {
+		String feindlichesElement = ziel.getElement();
 		if (feindlichesElement == "Erde") {
 			return 2;
 		} else {

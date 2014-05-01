@@ -1,5 +1,7 @@
 package imb.SS14.tpegr01.racewars.interfaces;
 
+import imb.SS14.tpegr01.racewars.Squad;
+
 public interface Helden {
 
 	public static enum Held {
@@ -25,6 +27,7 @@ public interface Helden {
 	}
 	
 	public abstract String getElement();
-	public abstract double kampfGegenHeld(Helden gegner);
+	public double elementBonus(Helden ziel);
+	public void spezialfunktion(Squad s,int runde);
 
 }
