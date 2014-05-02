@@ -2,6 +2,23 @@ package imb.SS14.tpegr01.racewars;
 
 import imb.SS14.tpegr01.racewars.wesen.*;
 
+/**
+ * Die Klasse <code>WesenFactory</code> erstellt Rassen mit gewünschter
+ * Investition.
+ * Die Kosten für:
+ * 		Ork: 150
+ * 		Mensch: 110
+ * 		Untote: 70
+ * 		Nachtelf: 145
+ * Für Anführer betragen die Kosten der Anführerrasse * 2.
+ * 
+ * @author Tim Hubert
+ * @author Torsten Müller
+ * @author Philipp Siebert
+ * @version 2 02/05/2014
+ *
+ */
+
 public class WesenFactory {
 
 	public static enum Rasse {
@@ -22,6 +39,15 @@ public class WesenFactory {
 		}
 
 	};
+	
+	/**
+	 * Ermittelt wieviel Rasse-Objekte man mit der entsprechenden Investition
+	 * anlegen kann und erstellt diese Objekte in ein Array.
+	 * 
+	 * @param rasse  Rasse, die zu Erstellen ist.
+	 * @param invest  Entsprechende Investition für die Rasse.
+	 * @return  Gibt die erstellten Objekte einer Rasse zurück.
+	 */
 
 	public static Wesen[] erschaffe(Rasse rasse, int invest) {
 		int truppenAnzahl = ermittleAnzahl(rasse.getKostenAnfuehrer(),
