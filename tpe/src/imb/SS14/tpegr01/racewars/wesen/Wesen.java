@@ -2,6 +2,18 @@ package imb.SS14.tpegr01.racewars.wesen;
 
 import imb.SS14.tpegr01.racewars.interfaces.*;
 
+/**
+ * Die abstrakte Klasse <code>Wesen</code> modelliert die Einheiten für das 
+ * Spiel RaceWars - mit ihren Eigenschaften und Fähigkeiten welche ggf. in den
+ * abgeleiteten Klassen spezifisch implementiert werden.
+ * 
+ * @author Tim Hubert
+ * @author Torsten Müller
+ * @author Philipp Siebert
+ * @version 2 02/05/2014
+ * 
+ */
+
 public abstract class Wesen implements Kaempfer {
 
 	private final String RASSE;

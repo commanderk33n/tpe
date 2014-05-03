@@ -3,6 +3,8 @@ package imb.SS14.tpegr01.racewars.wesen;
 import imb.SS14.tpegr01.racewars.interfaces.*;
 import imb.SS14.tpegr01.racewars.Squad;
 
+
+
 public class Lich extends Untoter implements Helden {
 
 	public Held name;
