@@ -55,6 +55,10 @@ public class Spieler {
 		if (rasse2 != null) {
 			this.gewaehlteKlassen = new Rasse[] { pruefeKlasse(rasse1),
 					pruefeKlasse(rasse2) };
+			if (this.gewaehlteKlassen[0].equals(this.gewaehlteKlassen[1])) {
+				investRasse1 += investRasse2;
+				investRasse2 = 0;
+			}
 			this.gewaehlteInvestitionen = new int[] {
 					pruefeInvestition(investRasse1),
 					pruefeInvestition(investRasse2) };

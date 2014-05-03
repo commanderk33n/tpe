@@ -44,6 +44,7 @@ public abstract class Wesen implements Kaempfer {
 				schaden *= elementBonus((Helden) ziel);
 			}
 			schaden -= schaden * ziel.getRuestung();
+			schaden=Math.round(schaden);
 			ziel.bekommtSchaden(schaden);
 			return schaden;
 		} else {
@@ -55,7 +56,7 @@ public abstract class Wesen implements Kaempfer {
 		return damage;
 	}
 
-	private double elementBonus(Helden ziel) {
+	protected double elementBonus(Helden ziel) {
 		return 1;
 	}
 
