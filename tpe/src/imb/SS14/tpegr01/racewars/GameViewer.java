@@ -12,14 +12,14 @@ import imb.SS14.tpegr01.racewars.wesen.Wesen;
  * 
  * 
  * @author Tim Hubert
- * @author Torsten MÃ¼ller
+ * @author Torsten Müller
  * @author Philipp Siebert
  * @version 2 28/04/2014
  */
 
 public class GameViewer {
 	/**
-	 * Gibt eine kurze Billanz Ã¼ber die Anzahl der Wesen in den Squads der
+	 * Gibt eine kurze Billanz über die Anzahl der Wesen in den Squads der
 	 * Spieler.
 	 * 
 	 * @param game
@@ -35,8 +35,8 @@ public class GameViewer {
 	}
 
 	/**
-	 * Gibt eine kurze Billanz Ã¼ber die Anzahl der Wesen in den Squads der
-	 * Spieler und anschlieÃŸend zu jedem Wesen die Anzahl der Lebenspunkte.
+	 * Gibt ine kurze Billanz über die Anzahl der Wesen in den Squads der
+	 * Spieler und anschließend zu jedem Wesen die Anzahl der Lebenspunkte.
 	 * 
 	 * @param game
 	 *            das Objekt der Klasse <code>GameController</code> welches
@@ -109,7 +109,7 @@ public class GameViewer {
 	}
 
 	public static void printAngriff(Wesen angreifer, Wesen opfer, double schaden) {
-		System.out.println(angreifer.getName() + " fÃ¼gt " + opfer.getName()
+		System.out.println(angreifer.getName() + " fügt " + opfer.getName()
 				+ " " + Math.round(schaden) + " Schaden zu.");
 	}
 }

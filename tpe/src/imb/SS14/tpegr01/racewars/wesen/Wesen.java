@@ -3,7 +3,7 @@ package imb.SS14.tpegr01.racewars.wesen;
 import imb.SS14.tpegr01.racewars.interfaces.*;
 
 /**
- * Die abstrakte Klasse <code>Wesen</code> modelliert die Einheiten fÃ¼r das
+ * Die abstrakte Klasse <code>Wesen</code> modelliert die Einheiten fÃ¼r das 
  * Spiel RaceWars - mit ihren Eigenschaften und FÃ¤higkeiten welche ggf. in den
  * abgeleiteten Klassen spezifisch implementiert werden.
  * 
@@ -24,10 +24,9 @@ public abstract class Wesen implements Kaempfer {
 	private final double SPEZIALATTRIBUT;
 	private final double BONUS;
 	private int lebenspunkte;
-
 	/**
-	 * Erstellt ein Objekt der Klasse <code>Wesen</code> mit allen nötigen
-	 * Attributen.
+	 *  Erstellt ein Objekt der Klasse <code>Wesen</code> mit allen nötigen	
+	 *  Attributen.           
 	 */
 
 	protected Wesen(String rasse, boolean istHeld, double lebenspunkte,
@@ -42,19 +41,17 @@ public abstract class Wesen implements Kaempfer {
 		this.lebenspunkte = (int) (lebenspunkte * bonus);
 		this.BONUS = bonus;
 	}
-
 	/**
-	 * Öffentliche Methode welche überprüft ob das Wesen noch über Lebenspunkte
-	 * verfügt.
+	 *  Öffentliche Methode welche überprüft ob das Wesen noch über 	
+	 *  Lebenspunkte verfügt.            
 	 */
 
 	public boolean isLebendig() {
 		return (this.lebenspunkte <= 0) ? false : true;
 	}
-
 	/**
-	 * Private Methode welche intern den Schadenoutput Wesens berechnet
-	 * 
+	 *  Private Methode welche intern den Schadenoutput Wesens berechnet
+	 *          
 	 */
 
 	protected double berechneSchaden() {
@@ -62,6 +59,7 @@ public abstract class Wesen implements Kaempfer {
 		damage = this.beschraenkeSchaden(damage);
 		return damage;
 	}
+	
 
 	public double attacke(Kaempfer r) {
 		if (r instanceof Wesen) {
@@ -71,18 +69,16 @@ public abstract class Wesen implements Kaempfer {
 				schaden *= elementBonus((Helden) ziel);
 			}
 			schaden -= schaden * ziel.getRuestung();
-			schaden = Math.round(schaden);
+			schaden=Math.round(schaden);
 			ziel.bekommtSchaden(schaden);
 			return schaden;
 		} else {
 			return 0;
 		}
 	}
-
 	/**
-	 * Private Methode welche der Schadensreduktion dient (nur bei Menschen wird
-	 * diese Methode überschrieben).
-	 * 
+	 *  Private Methode welche der Schadensreduktion dient.
+	 *            
 	 */
 
 	protected double beschraenkeSchaden(double damage) {
