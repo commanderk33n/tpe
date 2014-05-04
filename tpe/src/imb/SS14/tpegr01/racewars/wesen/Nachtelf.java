@@ -14,6 +14,9 @@ package imb.SS14.tpegr01.racewars.wesen;
 
 
 public class Nachtelf extends Wesen {
+	/**
+	 * Konstruktor der Klasse <code>Nachtelf</code>
+	 */
 
 	public Nachtelf() {
 		this(false, 1.0);

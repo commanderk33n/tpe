@@ -13,6 +13,9 @@ package imb.SS14.tpegr01.racewars.wesen;
  */
 
 public class Untoter extends Wesen {
+	/**
+	 * Konstruktor der Klasse <code>Untoter</code>
+	 */
 
 	public Untoter() {
 		this(false, 1.0);

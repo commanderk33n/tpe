@@ -14,6 +14,9 @@ package imb.SS14.tpegr01.racewars.wesen;
 
 
 public class Ork extends Wesen {
+	/**
+	 * Konstruktor der Klasse <code>Ork</code>
+	 */
 
 	public Ork() {
 		this(false, 1.0);

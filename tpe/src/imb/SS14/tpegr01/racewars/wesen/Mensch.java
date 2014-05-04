@@ -14,6 +14,9 @@ package imb.SS14.tpegr01.racewars.wesen;
 
 
 public class Mensch extends Wesen {
+	/**
+	 * Konstruktor der Klasse <code>Mensch</code>
+	 */
 
 	public Mensch() {
 		this(false, 1.0);
