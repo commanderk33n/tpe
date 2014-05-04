@@ -76,12 +76,12 @@ public class GameController {
 	 */
 
 	public static void main(String[] args) {
-		Spieler spieler1 = new Spieler("The walking Dead", "untote", 2000);
+		Spieler spieler1 = new Spieler("The walking Dead", "untote", 200);
 		Spieler spieler2 = new Spieler("Letzter Bund gegen Sauron",
 				"Nachtelfen", 1000, "menschen", 1200);
 		Spieler spieler3 = new Spieler("Orks von Amon Sûl", "orks", 3000);
-		Spieler spieler4 = new Spieler("Hipster-Horde", "menschen", 1500,"menschen",500);
-		GameController gameONE = new GameController(spieler4, spieler1);
+		Spieler spieler4 = new Spieler("Hipster-Horde", "menschen", 30,"menschen",200);
+		GameController gameONE = new GameController(spieler1, spieler4);
 		GameController gameTWO = new GameController(spieler3, spieler2);
 		gameONE.runGame();
 		gameTWO.runGame();
