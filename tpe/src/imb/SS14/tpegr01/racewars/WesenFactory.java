@@ -65,6 +65,13 @@ public class WesenFactory {
 		return armee;
 	}
 
+	/**
+	 * Erstellt ein Objekt der Klasse <code>Farseer</code> und entsprechend der
+	 * länge des Arrays viele Objecte der Klasse <code>Ork</code>
+	 * 
+	 * @param armee
+	 * @return armee gefülltes Array mit den Wesen Objekten
+	 */
 	private static Wesen[] erschaffeOrks(Wesen[] armee) {
 		armee[0] = new Farseer();
 		for (int i = 1; i < armee.length; i++) {
@@ -73,6 +80,13 @@ public class WesenFactory {
 		return armee;
 	}
 
+	/**
+	 * Erstellt ein Objekt der Klasse <code>Erzmagier</code> und entsprechend
+	 * der länge des Arrays viele Objecte der Klasse <code>Mensch</code>
+	 * 
+	 * @param armee
+	 * @return armee gefülltes Array mit den Wesen Objekten
+	 */
 	private static Wesen[] erschaffeMenschen(Wesen[] armee) {
 		armee[0] = new Erzmagier();
 		for (int i = 1; i < armee.length; i++) {
@@ -81,6 +95,13 @@ public class WesenFactory {
 		return armee;
 	}
 
+	/**
+	 * Erstellt ein Objekt der Klasse <code>Lich</code> und entsprechend der
+	 * länge des Arrays viele Objecte der Klasse <code>Untoter</code>
+	 * 
+	 * @param armee
+	 * @return armee gefülltes Array mit den Wesen Objekten
+	 */
 	private static Wesen[] erschaffeUntote(Wesen[] armee) {
 		armee[0] = new Lich();
 		for (int i = 1; i < armee.length; i++) {
@@ -89,6 +110,13 @@ public class WesenFactory {
 		return armee;
 	}
 
+	/**
+	 * Erstellt ein Objekt der Klasse <code>Farseer</code> und entsprechend der
+	 * länge des Arrays viele Objecte der Klasse <code>Ork</code>
+	 * 
+	 * @param armee
+	 * @return armee gefülltes Array mit den Wesen Objekten
+	 */
 	private static Wesen[] erschaffeNachtelfen(Wesen[] armee) {
 		armee[0] = new Daemonenjaeger();
 		for (int i = 1; i < armee.length; i++) {
@@ -97,6 +125,18 @@ public class WesenFactory {
 		return armee;
 	}
 
+	/**
+	 * Ermittelt anhand der Investition, Truppen- und Anfuehrerkosten die Anzahl
+	 * der zuproduzierenden Truppen.
+	 * 
+	 * @param anfuehrerKosten
+	 *            Preis des Anfuehrers
+	 * @param truppenKosten
+	 *            Preis der normalen Truppen
+	 * @param invest
+	 *            Geld das zur Truppenproduktion zur Verfügung steht
+	 * @return Anzahl der zuproduzierenden Truppen
+	 */
 	private static int ermittleAnzahl(int anfuehrerKosten, int truppenKosten,
 			int invest) {
 		int truppenAnzahl = 0;

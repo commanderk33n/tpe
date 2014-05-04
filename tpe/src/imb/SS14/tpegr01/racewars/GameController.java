@@ -62,7 +62,7 @@ public class GameController {
 		GameViewer.printResult(this);
 	}
 
-	/**
+	/**Gibt die aktuelle Spielrunde zurück
 	 * 
 	 * @return  Gibt die aktuelle Spielrunde zurück.
 	 */
@@ -88,7 +88,7 @@ public class GameController {
 
 	}
 	
-	/**
+	/**Gibt die Squads der zwei Spieler zurück.
 	 * 
 	 * @return  Gibt die Squads der zwei Spieler zurück.
 	 */

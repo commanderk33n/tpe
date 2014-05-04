@@ -87,7 +87,7 @@ public abstract class Wesen implements Kaempfer {
 		return details;
 	}
 
-	protected void ausslöschen() {
+	protected void aussloeschen() {
 		this.lebenspunkte = 0;
 	}
 

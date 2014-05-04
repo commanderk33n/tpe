@@ -3,12 +3,24 @@ package imb.SS14.tpegr01.racewars.wesen;
 import imb.SS14.tpegr01.racewars.Squad;
 import imb.SS14.tpegr01.racewars.interfaces.*;
 
+/**
+ * Die Klasse <code>Erzmagier</code> stellt den Anführer der Fraktion
+ * <code>Mensch</code> und besitzt die Spezialfähigkeit Absorption die
+ * verhindert, dass ihm Schaden zugefügt wird.
+ * 
+ * @author Tim Hubert
+ * @author Torsten Müller
+ * @author Philipp Siebert
+ */
 public class Erzmagier extends Mensch implements Helden {
 
 	public Held name;
 	private int spezialangriffRunde;
 	private boolean absorptionAktiv;
 
+	/**
+	 * Konstruktor der Klasse <code>Erzmagier</code>
+	 */
 	public Erzmagier() {
 		super(true, Held.ERZMAGIER.getBonusfaktor());
 		this.name = Held.ERZMAGIER;
@@ -25,6 +37,10 @@ public class Erzmagier extends Mensch implements Helden {
 		}
 	}
 
+	/**
+	 * Spezialfähigkeit Absorption die verhindert, dass ihm Schaden zugefügt
+	 * wird.
+	 */
 	private void absorption() {
 		this.absorptionAktiv = true;
 	}
