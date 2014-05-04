@@ -25,7 +25,7 @@ public class Farseer extends Ork implements Helden {
 		for (int i = 0; i < 2; i++) {
 			if (s.getLebendige() > 0) {
 				int index = s.zufallsIndex();
-				s.getWesen(index).ausslöschen();
+				s.getWesen(index).aussloeschen();
 				s.kampffaehig(index);
 			}
 		}
