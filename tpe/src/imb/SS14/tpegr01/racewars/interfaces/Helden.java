@@ -53,7 +53,7 @@ public interface Helden {
 	 * @return Parameter zur weiteren Schadensberechnung 1 bei keinem
 	 *         Elementbonus, 2 bei Elementbonus
 	 */
-	public double elementBonus(Helden ziel);
+	public abstract double elementBonus(Helden ziel);
 
 	/**
 	 * Ruft die entsprechende Spezialfähigkeit der Helden auf
@@ -65,12 +65,12 @@ public interface Helden {
 	 *            aktuelle Runde um zu ermitteln ob die Spezialfähigkeit
 	 *            einsatzbereit ist
 	 */
-	public void spezialfunktion(Squad s, int runde);
+	public abstract void spezialfunktion(Squad s, int runde);
 
 	/**
 	 * Gibt Name des Helden aus
 	 * 
 	 * @return Name des Helden
 	 */
-	public String getName();
+	public abstract String getName();
 }
