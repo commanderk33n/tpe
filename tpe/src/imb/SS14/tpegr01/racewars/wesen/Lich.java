@@ -31,7 +31,7 @@ public class Lich extends Untoter implements Helden {
 	public void spezialfunktion(Squad s, int runde) {
 		if (runde > spezialangriffRunde) {
 			verwesung(s);
-			spezialangriffRunde = runde;
+			spezialangriffRunde = runde + 2;
 		}
 	}
 
