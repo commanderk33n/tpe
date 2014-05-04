@@ -3,12 +3,12 @@ package imb.SS14.tpegr01.racewars.wesen;
 import imb.SS14.tpegr01.racewars.interfaces.*;
 
 /**
- * Die abstrakte Klasse <code>Wesen</code> modelliert die Einheiten für das 
- * Spiel RaceWars - mit ihren Eigenschaften und Fähigkeiten welche ggf. in den
+ * Die abstrakte Klasse <code>Wesen</code> modelliert die Einheiten fÃ¼r das 
+ * Spiel RaceWars - mit ihren Eigenschaften und FÃ¤higkeiten welche ggf. in den
  * abgeleiteten Klassen spezifisch implementiert werden.
  * 
  * @author Tim Hubert
- * @author Torsten Müller
+ * @author Torsten MÃ¼ller
  * @author Philipp Siebert
  * @version 2 02/05/2014
  * 
@@ -25,13 +25,8 @@ public abstract class Wesen implements Kaempfer {
 	private final double BONUS;
 	private int lebenspunkte;
 	/**
-	 * 
-	 * 
-	 *
-	 * 
-	 * 
-	 * 
-	 *            
+	 *  Erstellt ein Objekt der Klasse <code>Wesen</code> mit allen nötigen	
+	 *  Attributen.           
 	 */
 
 	protected Wesen(String rasse, boolean istHeld, double lebenspunkte,
@@ -46,16 +41,25 @@ public abstract class Wesen implements Kaempfer {
 		this.lebenspunkte = (int) (lebenspunkte * bonus);
 		this.BONUS = bonus;
 	}
+	/**
+	 *  Öffentliche Methode welche überprüft ob das Wesen noch über 	
+	 *  Lebenspunkte verfügt.            
+	 */
 
 	public boolean isLebendig() {
 		return (this.lebenspunkte <= 0) ? false : true;
 	}
+	/**
+	 *  Private Methode welche intern den Schadenoutput Wesens berechnet
+	 *          
+	 */
 
 	protected double berechneSchaden() {
 		double damage = (GESCHWINDIGKEIT * SCHADEN * SPEZIALATTRIBUT * BONUS);
 		damage = this.beschraenkeSchaden(damage);
 		return damage;
 	}
+	
 
 	public double attacke(Kaempfer r) {
 		if (r instanceof Wesen) {
@@ -72,6 +76,10 @@ public abstract class Wesen implements Kaempfer {
 			return 0;
 		}
 	}
+	/**
+	 *  Private Methode welche der Schadensreduktion dient.
+	 *            
+	 */
 
 	protected double beschraenkeSchaden(double damage) {
 		return damage;
@@ -92,7 +100,7 @@ public abstract class Wesen implements Kaempfer {
 	public String toString() {
 		String details = "Wesen ist von der Rasse: " + getRasse() + " hat "
 				+ getLebenspunkte() + " Lebenspunkte, " + getRuestung()
-				+ " Rüstung und verursacht " + getSchaden() + " Schaden.";
+				+ " RÃ¼stung und verursacht " + getSchaden() + " Schaden.";
 		return details;
 	}
 

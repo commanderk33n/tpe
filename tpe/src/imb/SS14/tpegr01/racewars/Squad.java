@@ -62,7 +62,7 @@ public class Squad {
 	}
 
 	/**
-	 * Erstellt mithilfe der statischen Klasse <code>Wesenfactory</code> die
+	 * Erstellt mithilfe der Klasse <code>Wesenfactory</code> die
 	 * Wesen und in einem Array zurückgibt
 	 * 
 	 * @param rasse
