@@ -3,15 +3,6 @@ package imb.SS14.tpegr01.racewars.wesen;
 import imb.SS14.tpegr01.racewars.Squad;
 import imb.SS14.tpegr01.racewars.interfaces.*;
 
-/**
- * Die Klasse <code>Farseer</code> stellt den Anführer der Fraktion
- * <code>Orks</code> und besitzt die Spezialfähigkeit doppelschlag die zwei
- * zufällige Wesen des gegnerischen Squads auslöscht.
- * 
- * @author Tim Hubert
- * @author Torsten Müller
- * @author Philipp Siebert
- */
 public class Farseer extends Ork implements Helden {
 
 	public Held name;
