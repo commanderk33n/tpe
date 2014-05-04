@@ -24,6 +24,15 @@ public abstract class Wesen implements Kaempfer {
 	private final double SPEZIALATTRIBUT;
 	private final double BONUS;
 	private int lebenspunkte;
+	/**
+	 * 
+	 * 
+	 *
+	 * 
+	 * 
+	 * 
+	 *            
+	 */
 
 	protected Wesen(String rasse, boolean istHeld, double lebenspunkte,
 			double ruestung, double schaden, double geschwindigkeit,
