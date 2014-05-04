@@ -2,6 +2,7 @@ package imb.SS14.tpegr01.racewars;
 
 import imb.SS14.tpegr01.racewars.WesenFactory.Rasse;
 import imb.SS14.tpegr01.racewars.wesen.Wesen;
+import imb.SS14.tpegr01.racewars.interfaces.*;
 
 /**
  * Die Klasse <code>Squad</code> stellt das Team der gewählten Wesen eines
@@ -62,8 +63,8 @@ public class Squad {
 	}
 
 	/**
-	 * Erstellt mithilfe der Klasse <code>Wesenfactory</code> die
-	 * Wesen und in einem Array zurückgibt
+	 * Erstellt mithilfe der Klasse <code>Wesenfactory</code> die Wesen und in
+	 * einem Array zurückgibt
 	 * 
 	 * @param rasse
 	 *            Rasse, der die erzeugten Wesen angehören sollen.
@@ -122,10 +123,14 @@ public class Squad {
 	 * 
 	 * @param angreifendesSquad
 	 */
-	public void wirdAngegriffen(Squad angreifendesSquad) {
+	public void wirdAngegriffen(Squad angreifendesSquad, int runde) {
 		for (int i = 0; i < angreifendesSquad.lebendigeWesen; i++) {
 			if (this.lebendigeWesen > 0) {
 				Wesen angreifer = angreifendesSquad.getWesen(i);
+				/*
+				 * if (angreifer instanceof Helden){ Helden
+				 * held=(Helden)angreifer; held.spezialfunktion(this, runde); }
+				 */
 				int opferindex = zufallsIndex();
 				Wesen opfer = this.armee[opferindex];
 				double schaden = angreifer.attacke(opfer);

@@ -29,7 +29,7 @@ public class Daemonenjaeger extends Nachtelf implements Helden {
 	public void spezialfunktion(Squad s, int runde) {
 		if (runde > spezialangriffRunde) {
 			goldschuss(s);
-			spezialangriffRunde = runde;
+			spezialangriffRunde = runde + 2;
 		}
 	}
 

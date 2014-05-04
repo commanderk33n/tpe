@@ -31,7 +31,7 @@ public class Erzmagier extends Mensch implements Helden {
 	public void spezialfunktion(Squad s, int runde) {
 		if (runde > spezialangriffRunde) {
 			absorption();
-			spezialangriffRunde = runde;
+			spezialangriffRunde = runde + 2;
 		} else {
 			this.absorptionAktiv = false;
 		}
