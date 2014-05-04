@@ -51,457 +51,457 @@ public class JUnit {
 	
 	// Alle Wesen greifen sich gegenseitig an!!!
 	
-	// Mensch greift jedes mögliche Ziel an
+	// Menschen
 	@Test
-	public void testSchadenMenschAttakiertMensch() {
+	public void MenschGegenMensch() {
 		Wesen mensch = new Mensch();
 		Wesen ziel = new Mensch();
 		assertTrue(48 == mensch.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenMenschAttakiertErzmagier() {
+	public void MenschGegenErzmagier() {
 		Wesen mensch = new Mensch();
 		Wesen ziel = new Erzmagier();
 		assertTrue(48 == mensch.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenMenschAttakiertOrk() {
+	public void MenschGegenOrk() {
 		Wesen mensch = new Mensch();
 		Wesen ziel = new Ork();
 		assertTrue(56 == mensch.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenMenschAttakiertFarseer() {
+	public void MenschGegenFarseer() {
 		Wesen mensch = new Mensch();
 		Wesen ziel = new Farseer();
 		assertTrue(56 == mensch.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenMenschAttakiertUntote() {
+	public void MenschGegenUntote() {
 		Wesen mensch = new Mensch();
 		Wesen ziel = new Untoter();
 		assertTrue(56 == mensch.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenMenschAttakiertLich() {
+	public void MenschGegenLich() {
 		Wesen mensch = new Mensch();
 		Wesen ziel = new Lich();
 		assertTrue(56 == mensch.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenMenschAttakiertNachtelf() {
+	public void MenschGegenNachtelf() {
 		Wesen mensch = new Mensch();
 		Wesen ziel = new Nachtelf();
 		assertTrue(64 == mensch.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenMenschAttakiertDaemonenjaeger() {
+	public void MenschGegenDaemonenjaeger() {
 		Wesen mensch = new Mensch();
 		Wesen ziel = new Daemonenjaeger();
 		assertTrue(64 == mensch.attacke(ziel));
 	}
 
-	// Ork greift jedes mögliche Ziel an
+	// Orks
 	@Test
-	public void testSchadenOrkAttakiertMensch() {
+	public void OrkGegenMensch() {
 		Wesen ork = new Ork();
 		Wesen ziel = new Mensch();
 		assertTrue(79 == ork.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenOrkAttakiertErzmagier() {
+	public void OrkGegenErzmagier() {
 		Wesen ork = new Ork();
 		Wesen ziel = new Erzmagier();
 		assertTrue(79 == ork.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenOrkAttakiertOrk() {
+	public void OrkGegenOrk() {
 		Wesen ork = new Ork();
 		Wesen ziel = new Ork();
 		assertTrue(92 == ork.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenOrkAttakiertFarseer() {
+	public void OrkGegenFarseer() {
 		Wesen ork = new Ork();
 		Wesen ziel = new Farseer();
 		assertTrue(92 == ork.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenOrkAttakiertUntote() {
+	public void OrkGegenUntote() {
 		Wesen ork = new Ork();
 		Wesen ziel = new Untoter();
 		assertTrue(92 == ork.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenOrkAttakiertLich() {
+	public void OrkGegenLich() {
 		Wesen ork = new Ork();
 		Wesen ziel = new Lich();
 		assertTrue(92 == ork.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenOrkAttakiertNachtelf() {
+	public void OrkGegenNachtelf() {
 		Wesen ork = new Ork();
 		Wesen ziel = new Nachtelf();
 		assertTrue(106 == ork.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenOrkAttakiertDaemonenjaeger() {
+	public void OrkGegenDaemonenjaeger() {
 		Wesen ork = new Ork();
 		Wesen ziel = new Daemonenjaeger();
 		assertTrue(106 == ork.attacke(ziel));
 	}
 
-	// Untote greift jedes mögliche Ziel an
+	// Untote
 	@Test
-	public void testSchadenUntoteAttakiertMensch() {
+	public void UntoteGegenMensch() {
 		Wesen untote = new Untoter();
 		Wesen ziel = new Mensch();
 		assertTrue(31 == untote.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenUntoteAttakiertErzmagier() {
+	public void UntoteGegenErzmagier() {
 		Wesen untote = new Untoter();
 		Wesen ziel = new Erzmagier();
 		assertTrue(31 == untote.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenUntoteAttakiertOrk() {
+	public void UntoteGegenOrk() {
 		Wesen untote = new Untoter();
 		Wesen ziel = new Ork();
 		assertTrue(36 == untote.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenUntoteAttakiertFarseer() {
+	public void UntoteGegenFarseer() {
 		Wesen untote = new Untoter();
 		Wesen ziel = new Farseer();
 		assertTrue(36 == untote.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenUntoteAttakiertUntote() {
+	public void UntoteGegenUntote() {
 		Wesen untote = new Untoter();
 		Wesen ziel = new Untoter();
 		assertTrue(36 == untote.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenUntoteAttakiertLich() {
+	public void UntoteGegenLich() {
 		Wesen untote = new Untoter();
 		Wesen ziel = new Lich();
 		assertTrue(36 == untote.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenUntoteAttakiertNachtelf() {
+	public void UntoteGegenNachtelf() {
 		Wesen untote = new Untoter();
 		Wesen ziel = new Nachtelf();
 		assertTrue(41 == untote.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenUntoteAttakiertDaemonenjaeger() {
+	public void UntoteGegenDaemonenjaeger() {
 		Wesen untote = new Untoter();
 		Wesen ziel = new Daemonenjaeger();
 		assertTrue(41 == untote.attacke(ziel));
 	}
 
-	// Nachtelf greift jedes mögliche Ziel an
+	// Nachtelf
 	@Test
-	public void testSchadenNachtelfAttakiertMensch() {
+	public void NachtelfGegenMensch() {
 		Wesen nachtefl = new Nachtelf();
 		Wesen ziel = new Mensch();
 		assertTrue(78 == nachtefl.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenNachtelfAttakiertErzmagier() {
+	public void NachtelfGegenErzmagier() {
 		Wesen nachtefl = new Nachtelf();
 		Wesen ziel = new Erzmagier();
 		assertTrue(78 == nachtefl.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenNachtelfAttakiertOrk() {
+	public void NachtelfGegenOrk() {
 		Wesen nachtefl = new Nachtelf();
 		Wesen ziel = new Ork();
 		assertTrue(91 == nachtefl.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenNachtelfAttakiertFarseer() {
+	public void NachtelfGegenFarseer() {
 		Wesen nachtefl = new Nachtelf();
 		Wesen ziel = new Farseer();
 		assertTrue(91 == nachtefl.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenNachtelfAttakiertUntote() {
+	public void NachtelfGegenUntote() {
 		Wesen nachtefl = new Nachtelf();
 		Wesen ziel = new Untoter();
 		assertTrue(91 == nachtefl.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenNachtelfAttakiertLich() {
+	public void NachtelfGegenLich() {
 		Wesen nachtefl = new Nachtelf();
 		Wesen ziel = new Lich();
 		assertTrue(91 == nachtefl.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenNachtelfAttakiertNachtelf() {
+	public void NachtelfGegenNachtelf() {
 		Wesen nachtefl = new Nachtelf();
 		Wesen ziel = new Nachtelf();
 		assertTrue(104 == nachtefl.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenNachtelfAttakiertDaemonenjaeger() {
+	public void NachtelfGegenDaemonenjaeger() {
 		Wesen nachtefl = new Nachtelf();
 		Wesen ziel = new Daemonenjaeger();
 		assertTrue(104 == nachtefl.attacke(ziel));
 	}
 
-	// Erzmagier greift jedes mögliche Ziel an
+	// Erzmagier
 	@Test
-	public void testSchadenErzmagierAttakiertMensch() {
+	public void ErzmagierGegenMensch() {
 		Wesen erzmagier = new Erzmagier();
 		Wesen ziel = new Mensch();
 		assertTrue(240 == erzmagier.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenErzmagierAttakiertErzmagier() {
+	public void ErzmagierGegenErzmagier() {
 		Wesen erzmagier = new Erzmagier();
 		Wesen ziel = new Erzmagier();
 		assertTrue(240== erzmagier.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenErzmagierAttakiertOrk() {
+	public void ErzmagierGegenOrk() {
 		Wesen erzmagier = new Erzmagier();
 		Wesen ziel = new Ork();
 		assertTrue(280 == erzmagier.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenErzmagierAttakiertFarseer() {
+	public void ErzmagierGegenFarseer() {
 		Wesen erzmagier = new Erzmagier();
 		Wesen ziel = new Farseer();
 		assertTrue(280 == erzmagier.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenErzmagierAttakiertUntote() {
+	public void ErzmagierGegenUntote() {
 		Wesen erzmagier = new Erzmagier();
 		Wesen ziel = new Untoter();
 		assertTrue(280 == erzmagier.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenErzmagierAttakiertLich() {
+	public void ErzmagierGegenLich() {
 		Wesen erzmagier = new Erzmagier();
 		Wesen ziel = new Lich();
 		assertTrue(280 == erzmagier.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenErzmagierAttakiertNachtelf() {
+	public void ErzmagierGegenNachtelf() {
 		Wesen erzmagier = new Erzmagier();
 		Wesen ziel = new Nachtelf();
 		assertTrue(320 == erzmagier.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenErzmagierAttakiertDaemonenjaeger() {
+	public void ErzmagierGegenDaemonenjaeger() {
 		Wesen erzmagier = new Erzmagier();
 		Wesen ziel = new Daemonenjaeger();
 		assertTrue(640 == erzmagier.attacke(ziel));
 	}
 
-	// Farseer greift jedes mögliche Ziel an
+	// Farseer 
 	@Test
-	public void testSchadenFarseerAttakiertMensch() {
+	public void FarseerGegenMensch() {
 		Wesen farseer = new Farseer();
 		Wesen ziel = new Mensch();
 		assertTrue(95 == farseer.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenFarseerAttakiertErzmagier() {
+	public void FarseerGegenErzmagier() {
 		Wesen farseer = new Farseer();
 		Wesen ziel = new Erzmagier();
 		assertTrue(95 == farseer.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenFarseerAttakiertOrk() {
+	public void FarseerGegenOrk() {
 		Wesen farseer = new Farseer();
 		Wesen ziel = new Ork();
 		assertTrue(111 == farseer.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenFarseerAttakiertFarseer() {
+	public void FarseerGegenFarseer() {
 		Wesen farseer = new Farseer();
 		Wesen ziel = new Farseer();
 		assertTrue(111 == farseer.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenFarseerAttakiertUntote() {
+	public void FarseerGegenUntote() {
 		Wesen farseer = new Farseer();
 		Wesen ziel = new Untoter();
 		assertTrue(111 == farseer.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenFarseerAttakiertLich() {
+	public void FarseerGegenLich() {
 		Wesen farseer = new Farseer();
 		Wesen ziel = new Lich();
 		assertTrue(222 == farseer.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenFarseerAttakiertNachtelf() {
+	public void FarseerGegenNachtelf() {
 		Wesen farseer = new Farseer();
 		Wesen ziel = new Nachtelf();
 		assertTrue(127 == farseer.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenFarseerAttakiertDaemonenjaeger() {
+	public void FarseerGegenDaemonenjaeger() {
 		Wesen farseer = new Farseer();
 		Wesen ziel = new Daemonenjaeger();
 		assertTrue(127 == farseer.attacke(ziel));
 	}
 
-	// Lich greift jedes mögliche Ziel an
+	// Lich
 	@Test
-	public void testSchadenLichAttakiertMensch() {
+	public void LichGegenMensch() {
 		Wesen lich = new Lich();
 		Wesen ziel = new Mensch();
 		assertTrue(71 == lich.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenLichAttakiertErzmagier() {
+	public void LichGegenErzmagier() {
 		Wesen lich = new Lich();
 		Wesen ziel = new Erzmagier();
 		assertTrue(141 == lich.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenLichAttakiertOrk() {
+	public void LichGegenOrk() {
 		Wesen lich = new Lich();
 		Wesen ziel = new Ork();
 		assertTrue(82 == lich.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenLichAttakiertFarseer() {
+	public void LichGegenFarseer() {
 		Wesen lich = new Lich();
 		Wesen ziel = new Farseer();
 		assertTrue(82 == lich.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenLichAttakiertUntote() {
+	public void LichGegenUntote() {
 		Wesen lich = new Lich();
 		Wesen ziel = new Untoter();
 		assertTrue(82 == lich.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenLichAttakiertLich() {
+	public void LichGegenLich() {
 		Wesen lich = new Lich();
 		Wesen ziel = new Lich();
 		assertTrue(82 == lich.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenLichAttakiertNachtelf() {
+	public void LichGegenNachtelf() {
 		Wesen lich = new Lich();
 		Wesen ziel = new Nachtelf();
 		assertTrue(94 == lich.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenLichAttakiertDaemonenjaeger() {
+	public void LichGegenDaemonenjaeger() {
 		Wesen lich = new Lich();
 		Wesen ziel = new Daemonenjaeger();
 		assertTrue(94 == lich.attacke(ziel));
 	}
 
-	// Daemonenjaeger greift jedes mögliche Ziel an
+	// Daemonenjaeger 
 	@Test
-	public void testSchadenDaemonenjaegerAttakiertMensch() {
+	public void DaemonenjaegerGegenMensch() {
 		Wesen daemonenjaeger = new Daemonenjaeger();
 		Wesen ziel = new Mensch();
 		assertTrue(235 == daemonenjaeger.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenDaemonenjaegerAttakiertErzmagier() {
+	public void DaemonenjaegerGegenErzmagier() {
 		Wesen daemonenjaeger = new Daemonenjaeger();
 		Wesen ziel = new Erzmagier();
 		assertTrue(235 == daemonenjaeger.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenDaemonenjaegerAttakiertOrk() {
+	public void DaemonenjaegerGegenOrk() {
 		Wesen daemonenjaeger = new Daemonenjaeger();
 		Wesen ziel = new Ork();
 		assertTrue(274 == daemonenjaeger.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenDaemonenjaegerAttakiertFarseer() {
+	public void DaemonenjaegerGegenFarseer() {
 		Wesen daemonenjaeger = new Daemonenjaeger();
 		Wesen ziel = new Farseer();
 		assertTrue(548 == daemonenjaeger.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenDaemonenjaegerAttakiertUntote() {
+	public void DaemonenjaegerGegenUntote() {
 		Wesen daemonenjaeger = new Daemonenjaeger();
 		Wesen ziel = new Untoter();
 		assertTrue(274 == daemonenjaeger.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenDaemonenjaegerAttakiertLich() {
+	public void DaemonenjaegerGegenLich() {
 		Wesen daemonenjaeger = new Daemonenjaeger();
 		Wesen ziel = new Lich();
 		assertTrue(274 == daemonenjaeger.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenDaemonenjaegerAttakiertNachtelf() {
+	public void DaemonenjaegerGegenNachtelf() {
 		Wesen daemonenjaeger = new Daemonenjaeger();
 		Wesen ziel = new Nachtelf();
 		assertTrue(313 == daemonenjaeger.attacke(ziel));
 	}
 
 	@Test
-	public void testSchadenDaemonenjaegerAttakiertDaemonenjaeger() {
+	public void DaemonenjaegerGegenDaemonenjaeger() {
 		Wesen daemonenjaeger = new Daemonenjaeger();
 		Wesen ziel = new Daemonenjaeger();
 		assertTrue(313 == daemonenjaeger.attacke(ziel));
