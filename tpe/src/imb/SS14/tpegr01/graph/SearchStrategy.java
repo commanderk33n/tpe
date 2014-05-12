@@ -19,7 +19,7 @@ public interface SearchStrategy<T> {
 	 *            Wert nachdem gesucht werden soll
 	 * @return Liste der Knotennamen
 	 */
-	public NodeList<T> search(T value);
+	public NodeList search(T value);
 
 	/**
 	 * Ausgabe des Weges den die Suche beim letzten Durchlauf genommen hat

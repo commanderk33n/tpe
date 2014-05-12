@@ -18,6 +18,14 @@ public class Node<T> {
 
 	private String name;
 	private T value;
+	private NodeList n;
+	
+	
+	public Node(String name, T value, NodeList n){
+		this.name = name;
+		this.value = value;
+		this.n = n;
+	}
 
 	/**
 	 * Hinzufügen eines Kindknotens.
@@ -25,8 +33,8 @@ public class Node<T> {
 	 * @param newChild
 	 *            Wert der gespeichert wird.
 	 */
-	public void addChild(T newChild) {
-
+	public void addChild(Node<T> newChild) {
+		n.add(newChild);
 	}
 
 	/**
@@ -35,9 +43,9 @@ public class Node<T> {
 	 * @return Liste aller Kindknoten
 	 */
 
-	public NodeList<T> getChildren() {
-		NodeList<T> NodeList = null;
-		return NodeList;
+	public NodeList getChildren() {
+		
+		return this.n;
 	}
 
 	/**

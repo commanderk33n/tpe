@@ -12,7 +12,7 @@ package imb.SS14.tpegr01.graph;
 public class BreadthFirstSearch<T> implements SearchStrategy<T> {
 
 	@Override
-	public NodeList<T> search(T value) {
+	public NodeList search(T value) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -22,5 +22,8 @@ public class BreadthFirstSearch<T> implements SearchStrategy<T> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
 
 }

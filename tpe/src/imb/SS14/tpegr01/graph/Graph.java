@@ -15,12 +15,31 @@ package imb.SS14.tpegr01.graph;
 
 public class Graph<T> {
 
+	private Node<T> first;
+
+	public Graph(Node<T> first) {
+		this.first = first;
+	}
+
+	public Node<T> getFirst() {
+		return first;
+	}
+
 	public void search() {
+		// TODO
+	}
+
+	public NodeList copyInto() {
+		return copyIntoRek(this.first, new NodeListImpl());
 
 	}
 
-	public void copyInto(NodeList<T> copy) {
-
+	public NodeList copyIntoRek(Node<T> first, NodeList e) {
+		e.add(first);
+		for (Node<T> n : first.getChildren()) {
+			copyIntoRek(n, e);
+		}
+		return e;
 	}
 
 }
