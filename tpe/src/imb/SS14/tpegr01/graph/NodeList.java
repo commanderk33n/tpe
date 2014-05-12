@@ -6,8 +6,9 @@ package imb.SS14.tpegr01.graph;
  * @param <T>
  *            Typ der im Knoten gespeicherten Elemente.
  * 
- * @author TORSTEN
- * 
+ * @author Tim Hubert
+ * @author Torsten Müller
+ * @author Philipp Siebert
  */
 public interface NodeList<T> extends List<Node<T>> {
 }

@@ -2,6 +2,17 @@ package imb.SS14.tpegr01.graph;
 
 import java.util.Iterator;
 
+/**
+ * 
+ * Verwaltung von Knotenlisten mit einem beliebigen Datentypen.
+ * 
+ * @author Tim Hubert
+ * @author Torsten Müller
+ * @author Philipp Siebert
+ * 
+ * @param <T>
+ *            Datentyp der gespeichert werden soll
+ */
 public class NodeListImpl<T> implements NodeList<T> {
 
 	@Override
@@ -19,7 +30,7 @@ public class NodeListImpl<T> implements NodeList<T> {
 	@Override
 	public void addFirst(Node<T> e) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -43,7 +54,7 @@ public class NodeListImpl<T> implements NodeList<T> {
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
