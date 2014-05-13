@@ -34,7 +34,7 @@ public class Graph<T> {
 
 	}
 
-	public NodeList copyIntoRek(Node<T> first, NodeList e) {
+	public NodeList copyIntoRek(Node<T> first, NodeListImpl e) {
 		e.add(first);
 		for (Node<T> n : first.getChildren()) {
 			copyIntoRek(n, e);

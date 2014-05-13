@@ -8,7 +8,7 @@ public class Main {
 		firstNode.addChild(new Node<String>("thirdNode", "Neeeiiiiinnn!"));
 		firstNode.addChild(new Node<String>("fourthNode", "Doch!"));
 		System.out.println(firstNode.getChildren().toString());
-		Graph graph1 = new Graph<String>(firstNode);
+		Graph<String> graph1 = new Graph<String>(firstNode);
 		System.out.println(firstNode.getValue());
 		System.out.println(graph1.getFirst().getValue());
 

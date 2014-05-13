@@ -14,6 +14,11 @@ import java.util.Iterator;
  *            Datentyp der gespeichert werden soll
  */
 public class NodeListImpl extends ListImpl<Node> implements NodeList {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 
 }
