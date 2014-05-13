@@ -14,5 +14,6 @@ import java.util.Iterator;
  *            Datentyp der gespeichert werden soll
  */
 public class NodeListImpl extends ListImpl<Node> implements NodeList {
+	
 
 }

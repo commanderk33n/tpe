@@ -2,7 +2,6 @@ package imb.SS14.tpegr01.racewars.junit;
 
 import static org.junit.Assert.*;
 import imb.SS14.tpegr01.racewars.*;
-import imb.SS14.tpegr01.racewars.interfaces.*;
 import imb.SS14.tpegr01.racewars.wesen.*;
 
 import org.junit.Test;

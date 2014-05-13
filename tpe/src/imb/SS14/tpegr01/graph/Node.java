@@ -18,13 +18,17 @@ public class Node<T> {
 
 	private String name;
 	private T value;
-	private NodeList n;
-	
-	
-	public Node(String name, T value, NodeList n){
+	private NodeListImpl children;
+
+	public Node(String name, T value, NodeListImpl n) {
+		this(name, value);
+		this.children = n;
+	}
+
+	public Node(String name, T value) {
 		this.name = name;
 		this.value = value;
-		this.n = n;
+		this.children = new NodeListImpl();
 	}
 
 	/**
@@ -34,7 +38,7 @@ public class Node<T> {
 	 *            Wert der gespeichert wird.
 	 */
 	public void addChild(Node<T> newChild) {
-		n.add(newChild);
+		children.add(newChild);
 	}
 
 	/**
@@ -43,9 +47,8 @@ public class Node<T> {
 	 * @return Liste aller Kindknoten
 	 */
 
-	public NodeList getChildren() {
-		
-		return this.n;
+	public NodeListImpl getChildren() {
+		return this.children;
 	}
 
 	/**
