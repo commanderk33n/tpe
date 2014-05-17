@@ -13,15 +13,15 @@ package imb.SS14.tpegr01.graph;
  *            Datentyp der gespeichert werden soll
  */
 
-public class Graph<T> {
+public class Graph {
 
-	private Node<T> first;
+	private Node<?> first;
 
-	public Graph(Node<T> first) {
+	public Graph(Node<?> first) {
 		this.first = first;
 	}
 
-	public Node<T> getFirst() {
+	public Node<?> getFirst() {
 		return first;
 	}
 
@@ -34,12 +34,25 @@ public class Graph<T> {
 
 	}
 
-	public NodeList copyIntoRek(Node<T> first, NodeListImpl e) {
+	public NodeList copyIntoRek(Node<?> first, NodeListImpl e) {
 		e.add(first);
-		for (Node<T> n : first.getChildren()) {
+		for (Node<?> n : first.getChildren()) {
 			copyIntoRek(n, e);
 		}
 		return e;
+	}
+
+	public String toString() {
+		String ausgabe = this.getFirst().toString();
+		NodeListImpl children = this.first.getChildren();
+		ausgabe += "[";
+		for (Node<?> next : children) {
+			Graph graph = new Graph(next);
+			ausgabe += graph.toString();
+		}
+		ausgabe += "] ";
+		return ausgabe;
+
 	}
 
 }

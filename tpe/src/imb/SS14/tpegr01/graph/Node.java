@@ -71,4 +71,14 @@ public class Node<T> {
 		return this.value;
 	}
 
+	/**
+	 * Allgeime Ausgabe des Knotens liefert Name und Value, getrennt durch ein
+	 * " = "
+	 * 
+	 * @return Name und Value, getrennt durch ein " = "
+	 */
+	public String toString() {
+		return getName() + " = " + getValue();
+	}
+
 }
