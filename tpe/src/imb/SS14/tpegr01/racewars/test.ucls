@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.5" icons="true" automaticImage="JPEG" always-add-relationships="false" 
   generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="imb.SS14.tpegr01.racewars.GameController" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/GameController.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="imb.SS14.tpegr01.racewars.GameController" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/GameController.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="189" width="178" x="782" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -10,8 +10,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="imb.SS14.tpegr01.racewars.GameViewer" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/GameViewer.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="2" language="java" name="imb.SS14.tpegr01.racewars.GameViewer" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/GameViewer.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="207" width="218" x="42" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -19,8 +19,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="imb.SS14.tpegr01.racewars.Spieler" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/Spieler.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="3" language="java" name="imb.SS14.tpegr01.racewars.Spieler" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/Spieler.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="279" width="185" x="557" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -28,8 +28,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="imb.SS14.tpegr01.racewars.Squad" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/Squad.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="4" language="java" name="imb.SS14.tpegr01.racewars.Squad" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/Squad.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="279" width="200" x="782" y="356"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -37,8 +37,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="5" language="java" name="imb.SS14.tpegr01.racewars.WesenFactory.Rasse" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/WesenFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+  <enumeration id="5" language="java" name="imb.SS14.tpegr01.racewars.WesenFactory.Rasse" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/WesenFactory.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="207" width="147" x="429" y="356"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -46,8 +46,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="6" language="java" name="imb.SS14.tpegr01.racewars.WesenFactory" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/WesenFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="6" language="java" name="imb.SS14.tpegr01.racewars.WesenFactory" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/WesenFactory.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="189" width="217" x="300" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -55,8 +55,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="7" language="java" name="imb.SS14.tpegr01.racewars.interfaces.Helden.Held" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/interfaces/Helden.java" binary="false" corner="BOTTOM_RIGHT">    
+  <enumeration id="7" language="java" name="imb.SS14.tpegr01.racewars.interfaces.Helden.Held" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/interfaces/Helden.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="225" width="169" x="505" y="1843"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -64,8 +64,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <interface id="8" language="java" name="imb.SS14.tpegr01.racewars.interfaces.Helden" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/interfaces/Helden.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="8" language="java" name="imb.SS14.tpegr01.racewars.interfaces.Helden" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/interfaces/Helden.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="135" width="174" x="505" y="1668"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -73,8 +73,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="9" language="java" name="imb.SS14.tpegr01.racewars.interfaces.Kaempfer" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/interfaces/Kaempfer.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="9" language="java" name="imb.SS14.tpegr01.racewars.interfaces.Kaempfer" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/interfaces/Kaempfer.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="81" width="169" x="42" y="1246"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -82,8 +82,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="10" language="java" name="imb.SS14.tpegr01.racewars.wesen.Untoter" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/wesen/Untoter.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="10" language="java" name="imb.SS14.tpegr01.racewars.wesen.Untoter" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/wesen/Untoter.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="99" width="153" x="691" y="1246"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -91,8 +91,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="imb.SS14.tpegr01.racewars.wesen.Ork" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/wesen/Ork.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="11" language="java" name="imb.SS14.tpegr01.racewars.wesen.Ork" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/wesen/Ork.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="99" width="153" x="884" y="1246"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -100,8 +100,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="imb.SS14.tpegr01.racewars.wesen.Lich" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/wesen/Lich.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="12" language="java" name="imb.SS14.tpegr01.racewars.wesen.Lich" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/wesen/Lich.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="189" width="174" x="679" y="1403"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -109,8 +109,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="imb.SS14.tpegr01.racewars.wesen.Erzmagier" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/wesen/Erzmagier.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="13" language="java" name="imb.SS14.tpegr01.racewars.wesen.Erzmagier" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/wesen/Erzmagier.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="225" width="174" x="251" y="1403"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -118,8 +118,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="imb.SS14.tpegr01.racewars.wesen.Geist" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/wesen/Geist.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="14" language="java" name="imb.SS14.tpegr01.racewars.wesen.Geist" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/wesen/Geist.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="99" width="153" x="42" y="675"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -127,8 +127,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="15" language="java" name="imb.SS14.tpegr01.racewars.wesen.Daemonenjaeger" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/wesen/Daemonenjaeger.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="15" language="java" name="imb.SS14.tpegr01.racewars.wesen.Daemonenjaeger" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/wesen/Daemonenjaeger.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="189" width="174" x="465" y="1403"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -136,8 +136,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="16" language="java" name="imb.SS14.tpegr01.racewars.wesen.Wesen" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/wesen/Wesen.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="16" language="java" name="imb.SS14.tpegr01.racewars.wesen.Wesen" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/wesen/Wesen.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="531" width="347" x="524" y="675"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -145,8 +145,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="17" language="java" name="imb.SS14.tpegr01.racewars.wesen.Nachtelf" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/wesen/Nachtelf.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="17" language="java" name="imb.SS14.tpegr01.racewars.wesen.Nachtelf" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/wesen/Nachtelf.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="99" width="153" x="498" y="1246"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -154,8 +154,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="18" language="java" name="imb.SS14.tpegr01.racewars.wesen.Farseer" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/wesen/Farseer.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="18" language="java" name="imb.SS14.tpegr01.racewars.wesen.Farseer" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/wesen/Farseer.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="189" width="174" x="893" y="1403"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -163,8 +163,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="imb.SS14.tpegr01.racewars.wesen.Mensch" project="tpe" 
-    file="/tpe/src/imb/SS14/tpegr01/racewars/wesen/Mensch.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="19" language="java" name="imb.SS14.tpegr01.racewars.wesen.Mensch" project="TPE" 
+    file="/TPE/src/imb/SS14/tpegr01/racewars/wesen/Mensch.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="117" width="207" x="251" y="1246"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
       visibility="true">      
@@ -173,137 +173,137 @@
     </display>  
   </class>  
   <generalization id="20">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="16"/>  
-  </generalization>  
-  <realization id="21">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="9"/>  
-  </realization>  
-  <realization id="22">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="8"/>  
-  </realization>  
-  <association id="23">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="24" name="spieler1"/>      
-      <multiplicity id="25" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="26">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <generalization id="27">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="17"/>  
-  </generalization>  
-  <association id="28">    
-    <bendpoint x="387" y="1668"/>    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="29" name="name"/>      
-      <multiplicity id="30" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="31">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="32" name="armee"/>      
-      <multiplicity id="33" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="34">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="7"/>  
-  </nesting>  
-  <generalization id="35">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="19"/>  
-  </generalization>  
-  <nesting id="36">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="5"/>  
-  </nesting>  
-  <association id="37">    
-    <bendpoint x="730" y="1668"/>    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="38" name="name"/>      
-      <multiplicity id="39" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="40">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="10"/>  
-  </generalization>  
-  <realization id="41">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="9"/>  
-  </realization>  
-  <association id="42">    
-    <bendpoint x="709" y="1668"/>    
-    <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="43" name="name"/>      
-      <multiplicity id="44" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="45">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="46" name="spieler2"/>      
-      <multiplicity id="47" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="48">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="8"/>  
-  </realization>  
-  <generalization id="49">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="16"/>  
-  </generalization>  
-  <generalization id="50">    
     <end type="SOURCE" refId="17"/>    
     <end type="TARGET" refId="16"/>  
   </generalization>  
-  <association id="51">    
+  <realization id="21">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <generalization id="22">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <generalization id="23">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <nesting id="24">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
+  </nesting>  
+  <generalization id="25">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <realization id="26">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="9"/>  
+  </realization>  
+  <association id="27">    
+    <bendpoint x="709" y="1668"/>    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="28" name="name"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="30">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <association id="31">    
+    <bendpoint x="474" y="1668"/>    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="32" name="name"/>      
+      <multiplicity id="33" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="35" name="spieler1"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="37">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="8"/>  
+  </realization>  
+  <association id="38">    
+    <bendpoint x="387" y="1668"/>    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="39" name="name"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="41">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </nesting>  
+  <generalization id="42">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <association id="43">    
     <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="52" name="gewaehlteKlassen"/>      
-      <multiplicity id="53" minimum="0" maximum="2147483647"/>    
+      <attribute id="44" name="gewaehlteKlassen"/>      
+      <multiplicity id="45" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="54">    
-    <bendpoint x="474" y="1668"/>    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="55" name="name"/>      
-      <multiplicity id="56" minimum="0" maximum="1"/>    
+  <realization id="46">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="9"/>  
+  </realization>  
+  <association id="47">    
+    <bendpoint x="730" y="1668"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="48" name="name"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="57">    
+  <association id="50">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="51" name="armee"/>      
+      <multiplicity id="52" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="53">    
     <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <realization id="54">    
+    <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="8"/>  
   </realization>  
+  <association id="55">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="56" name="spieler2"/>      
+      <multiplicity id="57" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <generalization id="58">    
     <end type="SOURCE" refId="19"/>    
     <end type="TARGET" refId="16"/>  
   </generalization>  
-  <realization id="59">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="8"/>  
-  </realization>  
+  <generalization id="59">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
