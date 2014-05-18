@@ -10,18 +10,33 @@ package imb.SS14.tpegr01.graph;
  * @param <T>
  *            Datentyp der gesucht werden soll
  */
-public class DeepSearch extends SearchStrategyNode {
-	
-	protected NodeList searchNode(Node<?> n, Object value) {
-		NodeList result = new NodeListImpl();
-		if (visited.check(n)) {
-			if (value.equals(n.getValue())) {
+public class DeepSearch<T> implements SearchStrategy<T> {
+
+	private VisitedList visited = new VisitedList();
+
+	@Override
+	public NodeList search(T toSearch, Node<T> start) {
+		visited.clear();
+		return deepSearch(toSearch, start, new NodeListImpl());
+	}
+
+	private NodeList deepSearch(T toSearch, Node<T> start, NodeList result) {
+		visited.add(start);
+		for (Node<T> n : start.getChildren()) {
+			if (visited.contains(n))
+				continue;
+
+			if (n.getValue().equals(toSearch)) {
 				result.add(n);
 			}
-			for (Node<?> next : n.getChildren())
-				result = searchNode(next, value);
+			deepSearch(toSearch, n, result);
 		}
 		return result;
+	}
+
+	@Override
+	public VisitedList getPath() {
+		return this.visited;
 	}
 
 }

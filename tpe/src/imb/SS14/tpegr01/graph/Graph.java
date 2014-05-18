@@ -8,14 +8,15 @@ package imb.SS14.tpegr01.graph;
  * @author Tim Hubert
  * @author Torsten Müller
  * @author Philipp Siebert
+ * @param <T>
  * 
  * @param <T>
  *            Datentyp der gespeichert werden soll
  */
 
-public class Graph {
+public class Graph<T> {
 
-	private Node<?> first;
+	private Node<T> first;
 	private VisitedList visited;
 
 	/**
@@ -24,7 +25,7 @@ public class Graph {
 	 * @param first
 	 *            Anfangsknoten
 	 */
-	public Graph(Node<?> first) {
+	public Graph(Node<T> first) {
 		this.first = first;
 		this.visited = new VisitedList();
 	}
@@ -34,7 +35,7 @@ public class Graph {
 	 * 
 	 * @return Anfangsknoten
 	 */
-	public Node<?> getFirst() {
+	public Node<T> getFirst() {
 		return first;
 	}
 
@@ -48,8 +49,8 @@ public class Graph {
 	 *            Suchstrategie, die verwendet werden soll
 	 * @return Liste aller Knoten mit dem gewünschten Element
 	 */
-	public NodeList search(Object value, SearchStrategy strategy) {
-		return strategy.search(value,this);
+	public NodeList search(SearchStrategy<T> s, T toSearch) {
+		return s.search(toSearch, this.first);
 	}
 
 	/**
@@ -74,10 +75,10 @@ public class Graph {
 	 * @param e
 	 *            Liste in die alle Elemente kopiert werden
 	 */
-	private void copyIntoRek(Node<?> first, NodeList e) {
+	private void copyIntoRek(Node<T> first, NodeList e) {
 		if (!e.contains(first)) {
 			e.add(first);
-			for (Node<?> n : first.getChildren()) {
+			for (Node<T> n : first.getChildren()) {
 				copyIntoRek(n, e);
 			}
 		}
@@ -108,13 +109,13 @@ public class Graph {
 	 *            Elements das Ausgelesen werden soll
 	 * @return Name und Wert der gefundenen Elemente
 	 */
-	private String getAllElements(Node<?> element) {
+	private String getAllElements(Node<T> element) {
 		String ausgabe = "";
 		if (visited.check(element)) {
 			ausgabe = element.toString();
 			NodeListImpl children = element.getChildren();
 			ausgabe += "[";
-			for (Node<?> next : children) {
+			for (Node<T> next : children) {
 
 				ausgabe += getAllElements(next);
 			}

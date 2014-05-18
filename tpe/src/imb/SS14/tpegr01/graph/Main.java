@@ -18,6 +18,11 @@ public class Main {
 		graph1.copyInto(liste1);
 		System.out.println(graph1);
 		System.out.println(liste1);
+		BreadthFirstSearch<String> breadthFirstSearch = new BreadthFirstSearch<String>();
+		System.out.println(breadthFirstSearch.search("Doch!", first));
+		DeepSearch<String> deepSearch = new DeepSearch<String>();
+		System.out.println(deepSearch.search("Neeeiiiiinnn!", first));
+		
 		
 
 	}
