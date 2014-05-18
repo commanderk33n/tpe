@@ -10,21 +10,18 @@ package imb.SS14.tpegr01.graph;
  * @param <T>
  *            Datentyp der gesucht werden soll
  */
-public class DeepSearch<T> implements SearchStrategy<T> {
-
-	@Override
-	public NodeList search(T value) {
-		// TODO Auto-generated method stub
-		return null;
+public class DeepSearch extends SearchStrategyNode {
+	
+	protected NodeList searchNode(Node<?> n, Object value) {
+		NodeList result = new NodeListImpl();
+		if (visited.check(n)) {
+			if (value.equals(n.getValue())) {
+				result.add(n);
+			}
+			for (Node<?> next : n.getChildren())
+				result = searchNode(next, value);
+		}
+		return result;
 	}
-
-	@Override
-	public String[] getPath() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
 
 }

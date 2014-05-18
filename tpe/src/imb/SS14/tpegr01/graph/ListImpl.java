@@ -1,6 +1,5 @@
 package imb.SS14.tpegr01.graph;
 import java.util.LinkedList;
-import java.util.Iterator;
 /**
  * 
  * Verwaltung von Listen eines beliebigen Datentypen.
@@ -12,6 +11,11 @@ import java.util.Iterator;
  * @param <T> Datentyp der gespeichert werden soll
  */
 public class ListImpl<T> extends LinkedList<T> implements List<T> {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	
 

@@ -10,10 +10,15 @@ public class Main {
 		Graph graph1 = new Graph(first);
 		System.out.println(graph1.getFirst().getChildren().get(1));
 		Node<Integer> newNode=new Node<Integer>("zahl1", 7);
-		graph1.getFirst().getChildren().get(0).addChild(newNode);
+		graph1.getFirst().getChildren().get(0).addChild(first);
+		graph1.getFirst().getChildren().get(1).addChild(newNode);
 		System.out.println(graph1.getFirst().getChildren().get(0).getChildren());
 		System.out.println(graph1.getFirst().getValue());
+		NodeList liste1=new NodeListImpl();
+		graph1.copyInto(liste1);
 		System.out.println(graph1);
+		System.out.println(liste1);
+		
 
 	}
 

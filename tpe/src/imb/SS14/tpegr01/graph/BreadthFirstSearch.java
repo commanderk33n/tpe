@@ -1,4 +1,5 @@
 package imb.SS14.tpegr01.graph;
+
 /**
  * Eine Implementierung der SearchStrategy Tiefensuche.
  * 
@@ -9,21 +10,16 @@ package imb.SS14.tpegr01.graph;
  * @param <T>
  *            Datentyp der gesucht werden soll
  */
-public class BreadthFirstSearch<T> implements SearchStrategy<T> {
+public class BreadthFirstSearch extends SearchStrategyNode {
 
 	@Override
-	public NodeList search(T value) {
-		// TODO Auto-generated method stub
+	protected NodeList searchNode(Node<?> n, Object value) {
+		//TODO!!
 		return null;
 	}
 
-	@Override
-	public String[] getPath() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
-
-
+	
 
 }

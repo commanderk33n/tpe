@@ -11,7 +11,7 @@ package imb.SS14.tpegr01.graph;
  * @param <T>
  *            Datentyp der gesucht werden soll
  */
-public interface SearchStrategy<T> {
+public interface SearchStrategy {
 	/**
 	 * Wendet Suchstrategie an um alle Knoten mit einem bestimmten Wert.
 	 * 
@@ -19,13 +19,13 @@ public interface SearchStrategy<T> {
 	 *            Wert nachdem gesucht werden soll
 	 * @return Liste der Knotennamen
 	 */
-	public NodeList search(T value);
+	public NodeList search(Object value,Graph g);
 
 	/**
 	 * Ausgabe des Weges den die Suche beim letzten Durchlauf genommen hat
 	 * 
 	 * @return Liste der Knotennamen
 	 */
-	public String[] getPath();
+	public VisitedList getPath();
 
 }
