@@ -20,6 +20,15 @@ public class DeepSearch<T> implements SearchStrategy<T> {
 		return deepSearch(toSearch, start, new NodeListImpl());
 	}
 
+	/**
+	 * Rekursive Tiefensuche
+	 * 
+	 * @param toSearch
+	 * @param start
+	 * @param result
+	 * @return result
+	 */
+
 	private NodeList deepSearch(T toSearch, Node<T> start, NodeList result) {
 		visited.add(start);
 		for (Node<T> n : start.getChildren()) {

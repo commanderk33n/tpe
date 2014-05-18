@@ -13,10 +13,12 @@ package imb.SS14.tpegr01.graph;
  */
 public interface SearchStrategy<T> {
 	/**
-	 * Wendet Suchstrategie an um alle Knoten mit einem bestimmten Wert.
+	 * Suche nach einem bestimmten Wert, ausgehend von einem Startknoten
 	 * 
-	 * @param value
+	 * @param toSearch
 	 *            Wert nachdem gesucht werden soll
+	 * @param start
+	 * 			  Startknoten
 	 * @return Liste der Knotennamen
 	 */
 	public NodeList search(T toSearch,Node<T> start);

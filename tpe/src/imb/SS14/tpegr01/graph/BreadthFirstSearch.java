@@ -13,9 +13,7 @@ package imb.SS14.tpegr01.graph;
 public class BreadthFirstSearch<T> implements SearchStrategy<T> {
 	private VisitedList visited = new VisitedList();
 
-	/**
-	 * Der Startknoten wird ins StartLevel gelegt.
-	 */
+
 	@Override
 	public NodeList search(T toSearch, Node<T> start) {
 		visited.clear();

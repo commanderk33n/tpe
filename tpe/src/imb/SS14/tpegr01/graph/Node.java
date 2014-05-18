@@ -2,8 +2,8 @@ package imb.SS14.tpegr01.graph;
 
 /**
  * Die Klasse <code>Node</code> vom generischen Typ T zur speicherung beliebiger
- * Datentypen. Jeder Knoten hat einen Namen und einen Wert beliebigen Typs,
- * weiterhin hat der Knoten beliebig viele Kinder.
+ * Datentypen. Jeder Knoten hat einen Namen und einen Wert beliebigen Typs, und
+ * beliebig viele Kinder
  * 
  * @author Tim Hubert
  * @author Torsten Müller
@@ -20,10 +20,25 @@ public class Node<T> {
 	private T value;
 	private NodeListImpl children;
 
+	/**
+	 * Konstruktor erstellt einen Knoten
+	 * 
+	 * @param name
+	 * @param value
+	 * @param n
+	 */
+
 	public Node(String name, T value, NodeListImpl n) {
 		this(name, value);
 		this.children = n;
 	}
+
+	/**
+	 * Konstruktor erstellt einen Knoten
+	 * 
+	 * @param name
+	 * @param value
+	 */
 
 	public Node(String name, T value) {
 		this.name = name;
