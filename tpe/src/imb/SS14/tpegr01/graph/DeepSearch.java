@@ -32,12 +32,15 @@ public class DeepSearch<T> implements SearchStrategy<T> {
 	private NodeList deepSearch(T toSearch, Node<T> start, NodeList result) {
 		visited.add(start);
 		for (Node<T> n : start.getChildren()) {
-			if (visited.contains(n))
-				continue;
-
 			if (n.getValue().equals(toSearch)) {
 				result.add(n);
 			}
+
+			if (visited.contains(n)){
+				continue;
+			}
+				
+
 			deepSearch(toSearch, n, result);
 		}
 		return result;

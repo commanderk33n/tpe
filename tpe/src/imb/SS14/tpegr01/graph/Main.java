@@ -34,6 +34,8 @@ public class Main {
 		System.out.println(deepSearch.search("Hallo?", graph1.getFirst()));  // BUGGGGYYYYY
 		System.out.println("Weg Tiefensuche:" + deepSearch.getPath());
 		
+		
+		
 	}
 
 }

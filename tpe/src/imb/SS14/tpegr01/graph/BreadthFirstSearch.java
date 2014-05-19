@@ -13,7 +13,6 @@ package imb.SS14.tpegr01.graph;
 public class BreadthFirstSearch<T> implements SearchStrategy<T> {
 	private VisitedList visited = new VisitedList();
 
-
 	@Override
 	public NodeList search(T toSearch, Node<T> start) {
 		visited.clear();
@@ -39,8 +38,9 @@ public class BreadthFirstSearch<T> implements SearchStrategy<T> {
 			NodeList result) {
 		NodeList nextLevel = new NodeListImpl();
 		for (Node<T> n : startLevel) {
-			if (visited.contains(n))
+			if (visited.contains(n)) {
 				continue;
+			}
 			if (n.getValue().equals(toSearch)) {
 				result.add(n);
 			}
