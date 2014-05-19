@@ -11,14 +11,15 @@ package imb.SS14.tpegr01.graph;
  *            Datentyp der gesucht werden soll
  */
 public class BreadthFirstSearch<T> implements SearchStrategy<T> {
-	private VisitedList visited = new VisitedList();
+	private VisitedList<T> visited = new VisitedList<T>();
+
 
 	@Override
-	public NodeList search(T toSearch, Node<T> start) {
+	public NodeList<T> search(T toSearch, Node<T> start) {
 		visited.clear();
-		NodeList startLevel = new NodeListImpl();
+		NodeList<T> startLevel = new NodeListImpl<T>();
 		startLevel.add(start);
-		return breadthSearch(toSearch, startLevel, new NodeListImpl());
+		return breadthSearch(toSearch, startLevel, new NodeListImpl<T>());
 	}
 
 	/**
@@ -34,13 +35,12 @@ public class BreadthFirstSearch<T> implements SearchStrategy<T> {
 	 * @return Liste der gefundenen Knoten
 	 */
 
-	private NodeList breadthSearch(T toSearch, NodeList startLevel,
-			NodeList result) {
-		NodeList nextLevel = new NodeListImpl();
+	private NodeList<T> breadthSearch(T toSearch, NodeList<T> startLevel,
+			NodeList<T> result) {
+		NodeList<T> nextLevel = new NodeListImpl<T>();
 		for (Node<T> n : startLevel) {
-			if (visited.contains(n)) {
+			if (visited.contains(n))
 				continue;
-			}
 			if (n.getValue().equals(toSearch)) {
 				result.add(n);
 			}
@@ -59,7 +59,7 @@ public class BreadthFirstSearch<T> implements SearchStrategy<T> {
 	}
 
 	@Override
-	public VisitedList getPath() {
+	public VisitedList<T> getPath() {
 
 		return visited;
 	}

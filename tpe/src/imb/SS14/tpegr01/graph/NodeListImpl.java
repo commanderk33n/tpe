@@ -1,6 +1,5 @@
 package imb.SS14.tpegr01.graph;
 
-import java.util.Iterator;
 
 /**
  * 
@@ -13,7 +12,7 @@ import java.util.Iterator;
  * @param <T>
  *            Datentyp der gespeichert werden soll
  */
-public class NodeListImpl extends ListImpl<Node> implements NodeList {
+public class NodeListImpl<T> extends ListImpl<Node<T>> implements NodeList<T> {
 
 	/**
 	 * 

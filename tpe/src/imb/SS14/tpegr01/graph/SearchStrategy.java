@@ -21,13 +21,13 @@ public interface SearchStrategy<T> {
 	 * 			  Startknoten
 	 * @return Liste der Knotennamen
 	 */
-	public NodeList search(T toSearch,Node<T> start);
+	public NodeList<T> search(T toSearch,Node<T> start);
 
 	/**
 	 * Ausgabe des Weges den die Suche beim letzten Durchlauf genommen hat
 	 * 
 	 * @return Liste der Knotennamen
 	 */
-	public VisitedList getPath();
+	public VisitedList<T> getPath();
 
 }
