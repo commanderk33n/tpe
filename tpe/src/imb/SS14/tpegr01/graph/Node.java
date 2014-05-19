@@ -18,7 +18,7 @@ public class Node<T> {
 
 	private String name;
 	private T value;
-	private NodeListImpl children;
+	private NodeListImpl<T> children;
 
 	/**
 	 * Konstruktor erstellt einen Knoten
@@ -28,7 +28,7 @@ public class Node<T> {
 	 * @param n
 	 */
 
-	public Node(String name, T value, NodeListImpl n) {
+	public Node(String name, T value, NodeListImpl<T> n) {
 		this(name, value);
 		this.children = n;
 	}
@@ -43,7 +43,7 @@ public class Node<T> {
 	public Node(String name, T value) {
 		this.name = name;
 		this.value = value;
-		this.children = new NodeListImpl();
+		this.children = new NodeListImpl<T>();
 	}
 
 	/**
@@ -62,7 +62,7 @@ public class Node<T> {
 	 * @return Liste aller Kindknoten
 	 */
 
-	public NodeListImpl getChildren() {
+	public NodeListImpl<T> getChildren() {
 		return this.children;
 	}
 

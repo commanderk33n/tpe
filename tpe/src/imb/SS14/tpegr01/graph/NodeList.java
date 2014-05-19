@@ -10,5 +10,5 @@ package imb.SS14.tpegr01.graph;
  * @author Torsten Müller
  * @author Philipp Siebert
  */
-public interface NodeList extends List<Node> {
+public interface NodeList<T> extends List<Node<T>> {
 }

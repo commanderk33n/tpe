@@ -17,7 +17,7 @@ package imb.SS14.tpegr01.graph;
 public class Graph<T> {
 
 	private Node<T> first;
-	private VisitedList visited;
+	private VisitedList<T> visited;
 
 	/**
 	 * Konstruktor zur Klasse <code>Graph</code>
@@ -27,7 +27,7 @@ public class Graph<T> {
 	 */
 	public Graph(Node<T> first) {
 		this.first = first;
-		this.visited = new VisitedList();
+		this.visited = new VisitedList<T>();
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class Graph<T> {
 	 *            Suchstrategie, die verwendet werden soll
 	 * @return Liste aller Knoten mit dem gewünschten Element
 	 */
-	public NodeList search(SearchStrategy<T> s, T toSearch) {
+	public NodeList<T> search(SearchStrategy<T> s, T toSearch) {
 		return s.search(toSearch, this.first);
 	}
 
@@ -60,7 +60,7 @@ public class Graph<T> {
 	 * @param e
 	 *            Liste in die alle Elemente kopiert werden
 	 */
-	public void copyInto(NodeList e) {
+	public void copyInto(NodeList<T> e) {
 		visited.clear();
 		copyIntoRek(this.first, e);
 
@@ -75,7 +75,7 @@ public class Graph<T> {
 	 * @param e
 	 *            Liste in die alle Elemente kopiert werden
 	 */
-	private void copyIntoRek(Node<T> first, NodeList e) {
+	private void copyIntoRek(Node<T> first, NodeList<T> e) {
 		if (!e.contains(first)) {
 			e.add(first);
 			for (Node<T> n : first.getChildren()) {
@@ -113,7 +113,7 @@ public class Graph<T> {
 		String ausgabe = "";
 		if (visited.check(element)) {
 			ausgabe = element.toString();
-			NodeListImpl children = element.getChildren();
+			NodeListImpl<T> children = element.getChildren();
 			ausgabe += "[";
 			for (Node<T> next : children) {
 
