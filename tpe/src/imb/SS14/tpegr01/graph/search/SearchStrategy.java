@@ -1,4 +1,8 @@
-package imb.SS14.tpegr01.graph;
+package imb.SS14.tpegr01.graph.search;
+
+import imb.SS14.tpegr01.graph.Node;
+import imb.SS14.tpegr01.graph.lists.NodeList;
+import imb.SS14.tpegr01.graph.lists.VisitedList;
 
 /**
  * Interface zur Implementierung verschiedener Suchstrategien

@@ -1,4 +1,10 @@
-package imb.SS14.tpegr01.graph;
+package imb.SS14.tpegr01.graph.tests;
+
+import imb.SS14.tpegr01.graph.Graph;
+import imb.SS14.tpegr01.graph.Node;
+import imb.SS14.tpegr01.graph.search.BreadthFirstSearch;
+import imb.SS14.tpegr01.graph.search.DeepSearch;
+import imb.SS14.tpegr01.graph.search.SearchStrategy;
 
 public class Main {
 

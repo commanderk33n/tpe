@@ -1,4 +1,6 @@
-package imb.SS14.tpegr01.graph;
+package imb.SS14.tpegr01.graph.lists;
+
+import imb.SS14.tpegr01.graph.Node;
 
 /**
  * Einfache Datenstruktur zur Verwaltung einer Reihe von Knoten.

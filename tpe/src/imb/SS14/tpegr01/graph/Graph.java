@@ -1,5 +1,10 @@
 package imb.SS14.tpegr01.graph;
 
+import imb.SS14.tpegr01.graph.lists.NodeList;
+import imb.SS14.tpegr01.graph.lists.NodeListImpl;
+import imb.SS14.tpegr01.graph.lists.VisitedList;
+import imb.SS14.tpegr01.graph.search.SearchStrategy;
+
 /**
  * Der Graph besteht aus einer beliebigen Anzahl von Knoten, wobei einer der
  * Knoten als Anfangsknoten ausgezeichnet wird. Von diesem Anfangsknoten aus
@@ -111,7 +116,7 @@ public class Graph<T> {
 	 */
 	private String getAllElements(Node<T> element) {
 		String ausgabe = "";
-		if (visited.check(element)) {
+		if (visited.addOnlyOnce(element)) {
 			ausgabe = element.toString();
 			NodeListImpl<T> children = element.getChildren();
 			ausgabe += "[";

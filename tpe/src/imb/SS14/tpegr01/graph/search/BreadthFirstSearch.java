@@ -1,4 +1,9 @@
-package imb.SS14.tpegr01.graph;
+package imb.SS14.tpegr01.graph.search;
+
+import imb.SS14.tpegr01.graph.Node;
+import imb.SS14.tpegr01.graph.lists.NodeList;
+import imb.SS14.tpegr01.graph.lists.NodeListImpl;
+import imb.SS14.tpegr01.graph.lists.VisitedList;
 
 /**
  * Eine Implementierung der SearchStrategy Breitensuche.
@@ -12,7 +17,6 @@ package imb.SS14.tpegr01.graph;
  */
 public class BreadthFirstSearch<T> implements SearchStrategy<T> {
 	private VisitedList<T> visited = new VisitedList<T>();
-
 
 	@Override
 	public NodeList<T> search(T toSearch, Node<T> start) {
@@ -29,9 +33,14 @@ public class BreadthFirstSearch<T> implements SearchStrategy<T> {
 	 * jetzigen Ebene - Die Rekursion ruft sich immer mit der nächsten Ebene auf
 	 * sobald ein in der aktuellen das Ende erreicht wird.
 	 * 
+	 * 
 	 * @param toSearch
+	 *            Wert nachdem gesucht wird
 	 * @param startLevel
+	 *            Liste der Startknoten
 	 * @param result
+	 *            Liste in der die gefundenen passenden Knoten gespeichert
+	 *            werden
 	 * @return Liste der gefundenen Knoten
 	 */
 
@@ -39,22 +48,18 @@ public class BreadthFirstSearch<T> implements SearchStrategy<T> {
 			NodeList<T> result) {
 		NodeList<T> nextLevel = new NodeListImpl<T>();
 		for (Node<T> n : startLevel) {
-			if (visited.contains(n))
-				continue;
-			if (n.getValue().equals(toSearch)) {
-				result.add(n);
-			}
-			visited.add(n);
-
-			for (Node<T> child : n.getChildren()) {
-				nextLevel.add(child);
+			if (visited.addOnlyOnce(n)) {
+				if (n.getValue().equals(toSearch)) {
+					result.add(n);
+				}
+				for (Node<T> child : n.getChildren()) {
+					nextLevel.add(child);
+				}
 			}
 		}
-
 		if (!nextLevel.isEmpty()) {
 			breadthSearch(toSearch, nextLevel, result);
 		}
-
 		return result;
 	}
 

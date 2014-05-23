@@ -1,4 +1,4 @@
-package imb.SS14.tpegr01.graph;
+package imb.SS14.tpegr01.graph.lists;
 
 /**
  * Einfache Datenstruktur zur Verwaltung einer Reihe von Elementen.
