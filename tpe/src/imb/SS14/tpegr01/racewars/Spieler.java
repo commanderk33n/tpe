@@ -1,6 +1,6 @@
 package imb.SS14.tpegr01.racewars;
 
-import imb.SS14.tpegr01.racewars.WesenFactory.Rasse;
+import imb.SS14.tpegr01.racewars.wesen.WesenFactory.Rasse;
 
 /**
  * Die Klasse <code>Spieler</code> erstellt einen neuen Speiler, der max. zwei

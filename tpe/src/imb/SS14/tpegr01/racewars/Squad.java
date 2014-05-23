@@ -1,7 +1,8 @@
 package imb.SS14.tpegr01.racewars;
 
-import imb.SS14.tpegr01.racewars.WesenFactory.Rasse;
 import imb.SS14.tpegr01.racewars.wesen.Wesen;
+import imb.SS14.tpegr01.racewars.wesen.WesenFactory;
+import imb.SS14.tpegr01.racewars.wesen.WesenFactory.Rasse;
 
 /**
  * Die Klasse <code>Squad</code> stellt das Team der gewählten Wesen eines
