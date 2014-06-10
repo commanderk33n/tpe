@@ -5,6 +5,25 @@ import java.util.ArrayList;
 public class SystemOverLord {
 	private ArrayList<Cinema> cinemas = new ArrayList<Cinema>();
 
+	public ArrayList<Cinema> getCinemas() {
+		return cinemas;
+	}
+
+	public void setCinemas(ArrayList<Cinema> cinemas) {
+		this.cinemas = cinemas;
+	}
+
+	public void addCinema(Cinema... cinemas) {
+		for (Cinema cinema : cinemas) {
+			this.cinemas.add(cinema);
+		}
+	}
+
+	public void createAndAddCinema(String name, String city, Hall... halls) {
+		Cinema newCinema = new Cinema(name, city, halls);
+		this.cinemas.add(newCinema);
+	}
+
 	/**
 	 * Auslesen aller Filme mit Ihren Anfangszeiten als Array sortiert nach der
 	 * Anfangszeit. Filme können doppelt vorkommen, wenn sie unterschiedliche
@@ -15,7 +34,7 @@ public class SystemOverLord {
 	 * @return Filme mit Ihren Anfangszeiten
 	 */
 	public Film[] getAllMoviesWithTimes(Cinema c) {
-		//TODO
+		// TODO
 		return null;
 	}
 
@@ -25,7 +44,7 @@ public class SystemOverLord {
 	 * (getFilmeFuerSaalMitZeiten)
 	 */
 	public Film[] getMoviesForHallWithTimes(Cinema c, Hall h) {
-		//TODO
+		// TODO
 		return null;
 	}
 
@@ -42,7 +61,7 @@ public class SystemOverLord {
 	 * @return alle Filme eines Kinos
 	 */
 	public Film[] getAllmovies(Cinema c) {
-		//TODO
+		// TODO
 		return null;
 	}
 
@@ -61,7 +80,7 @@ public class SystemOverLord {
 	 * @return alle Filme eines Kinos
 	 */
 	public Film[] getAllmovies(Cinema c, SortingCriterion s) {
-		//TODO
+		// TODO
 		return null;
 	}
 }

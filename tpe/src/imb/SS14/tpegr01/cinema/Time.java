@@ -1,10 +1,27 @@
 package imb.SS14.tpegr01.cinema;
 
 public class Time {
+
 	private int minutes;
 
 	public Time(String time) {
-		this.minutes = parse(time);
+		int minutesTest = parse(time);
+		if (minutesTest >= 0) {
+			this.minutes = minutesTest;
+		}
+	}
+
+	public Time(int timeAsMinutes) {
+		try {
+			if (timeAsMinutes >= 0) {
+				this.minutes = timeAsMinutes;
+			} else {
+				throw new IllegalTimeException(
+						"Unzulässige Uhrzeit wurde eingegeben!");
+			}
+		} catch (IllegalTimeException e) {
+			System.out.println("Fehler: " + e.getMessage());
+		}
 	}
 
 	private int parse(String time) {
@@ -13,19 +30,18 @@ public class Time {
 		int minute = Integer.valueOf(time.substring(index + 1));
 		try {
 			if (hour > 23 || hour < 0) {
-				throw new MyTimeException(
+				throw new IllegalTimeException(
 						"Unzulässige Stunde wurde eingegeben!");
 
 			}
 			if (minute > 59 || minute < 0) {
-				throw new MyTimeException(
+				throw new IllegalTimeException(
 						"Unzulässige Stunde wurde eingegeben!");
 			}
 			return hour * 60 + minute;
-		} catch (MyTimeException e) {
+		} catch (IllegalTimeException e) {
 			System.out.println("Fehler: " + e.getMessage());
 		}
-
 		return -1;
 	}
 
@@ -51,14 +67,14 @@ public class Time {
 		return result;
 	}
 
-	public class MyTimeException extends Exception {
+	public class IllegalTimeException extends Exception {
 
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 1L;
 
-		public MyTimeException(String message) {
+		public IllegalTimeException(String message) {
 			super(message);
 		}
 	}

@@ -9,8 +9,24 @@ public enum USK {
 	private int usk;
 
 	private USK(String text, int usk) {
-		this.text = text;
-		this.usk = usk;
+		this.setText(text);
+		this.setUsk(usk);
 
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	private void setText(String text) {
+		this.text = text;
+	}
+
+	public int getUsk() {
+		return usk;
+	}
+
+	private void setUsk(int usk) {
+		this.usk = usk;
 	}
 }
