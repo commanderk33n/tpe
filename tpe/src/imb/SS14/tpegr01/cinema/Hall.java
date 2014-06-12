@@ -17,10 +17,28 @@ public class Hall {
 		return name;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (o instanceof Hall) {
+			Hall hallToCompare = (Hall) o;
+			if (hallToCompare.name.equals(this.name)) {
+				if (hallToCompare.seats == this.seats) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public String toString() {
+		return ("Saal '" + getName() + "' (" + getSeats() + " Plaetze)");
+	}
+
 	private void setName(String name) {
 		this.name = name;
 	}
-	
+
 	private void setSeats(int seats) {
 		this.seats = seats;
 	}

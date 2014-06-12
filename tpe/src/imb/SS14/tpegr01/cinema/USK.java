@@ -1,9 +1,9 @@
 package imb.SS14.tpegr01.cinema;
 
 public enum USK {
-	OHNEALT("ohne Altersfreigabe", 0), ABSECHS("ab 6 Jahre", 6), ABZWOELF(
+	OHNEALT("ohne Altersbeschränkung", 0), ABSECHS("ab 6 Jahre", 6), ABZWOELF(
 			"ab 12 Jahre", 12), ABSECHZEHN("ab 16 Jahre", 16), OHNEJUGEND(
-			"ohne Jugendfreigabe", 18);
+			"keine Jugendfreigabe", 18);
 
 	private String text;
 	private int usk;
@@ -12,6 +12,11 @@ public enum USK {
 		this.setText(text);
 		this.setUsk(usk);
 
+	}
+
+	@Override
+	public String toString() {
+		return this.text;
 	}
 
 	public String getText() {

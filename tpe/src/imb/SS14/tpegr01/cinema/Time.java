@@ -62,8 +62,11 @@ public class Time {
 	}
 
 	public String toString() {
-		String result = "" + (int) (this.minutes / 60) + ":" + this.minutes
-				% 60;
+		String result = "" + (int) (this.minutes / 60) + ":";
+		if ((this.minutes % 60) < 10) {
+			result += "0";
+		}
+		result += this.minutes % 60;
 		return result;
 	}
 

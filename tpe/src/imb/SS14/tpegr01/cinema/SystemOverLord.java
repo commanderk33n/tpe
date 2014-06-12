@@ -33,7 +33,7 @@ public class SystemOverLord {
 	 *            Kino dessen Filme ausgelesen werden sollen
 	 * @return Filme mit Ihren Anfangszeiten
 	 */
-	public Film[] getAllMoviesWithTimes(Cinema c) {
+	public ProgramPart[] getAllMoviesWithTimes(Cinema c) {
 		// TODO
 		return null;
 	}
@@ -43,7 +43,7 @@ public class SystemOverLord {
 	 * Anfangszeiten als Array. Die Filme sind nach der Startzeit sortiert.
 	 * (getFilmeFuerSaalMitZeiten)
 	 */
-	public Film[] getMoviesForHallWithTimes(Cinema c, Hall h) {
+	public ProgramPart[] getMoviesForHallWithTimes(Cinema c, Hall h) {
 		// TODO
 		return null;
 	}
