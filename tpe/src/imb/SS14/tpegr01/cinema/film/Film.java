@@ -1,4 +1,5 @@
-package imb.SS14.tpegr01.cinema;
+package imb.SS14.tpegr01.cinema.film;
+
 
 public class Film {
 	private String titel;

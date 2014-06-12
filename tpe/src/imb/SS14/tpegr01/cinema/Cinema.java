@@ -1,5 +1,7 @@
 package imb.SS14.tpegr01.cinema;
 
+import imb.SS14.tpegr01.cinema.program.ProgramPart;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;

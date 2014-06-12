@@ -32,7 +32,8 @@ public class Hall {
 
 	@Override
 	public String toString() {
-		return ("Saal '" + getName() + "' (" + getSeats() + " Plaetze)");
+		return ("Saal '" + getName() + "' (" + getSeats() + ((getSeats() == 1) ? " Platz)"
+				: " Plaetze)"));
 	}
 
 	private void setName(String name) {

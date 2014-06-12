@@ -1,4 +1,4 @@
-package imb.SS14.tpegr01.cinema;
+package imb.SS14.tpegr01.cinema.film;
 
 public enum USK {
 	OHNEALT("ohne Altersbeschränkung", 0), ABSECHS("ab 6 Jahre", 6), ABZWOELF(

@@ -5,11 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import imb.SS14.tpegr01.cinema.Cinema;
-import imb.SS14.tpegr01.cinema.Film;
 import imb.SS14.tpegr01.cinema.Hall;
-import imb.SS14.tpegr01.cinema.ProgramPart;
-import imb.SS14.tpegr01.cinema.Time;
-import imb.SS14.tpegr01.cinema.USK;
+import imb.SS14.tpegr01.cinema.film.Film;
+import imb.SS14.tpegr01.cinema.film.USK;
+import imb.SS14.tpegr01.cinema.program.ProgramPart;
+import imb.SS14.tpegr01.cinema.program.Time;
 
 public class Junit {
 

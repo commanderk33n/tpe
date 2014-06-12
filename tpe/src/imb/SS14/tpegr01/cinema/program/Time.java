@@ -1,4 +1,4 @@
-package imb.SS14.tpegr01.cinema;
+package imb.SS14.tpegr01.cinema.program;
 
 public class Time {
 

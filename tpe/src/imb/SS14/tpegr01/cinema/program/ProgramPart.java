@@ -1,7 +1,9 @@
 /**
  * 
  */
-package imb.SS14.tpegr01.cinema;
+package imb.SS14.tpegr01.cinema.program;
+
+import imb.SS14.tpegr01.cinema.film.Film;
 
 /**
  * @author Philipp Siebert
