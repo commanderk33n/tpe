@@ -188,25 +188,25 @@ public class Cinema implements Iterable<ProgramPart> {
 	// doppelt vorkommen, wenn sie unterschiedliche Anfangszeiten haben.
 	private class CinemaIterator implements Iterator<ProgramPart> {
 
-		/**
-		 * 
-		 */
-		public CinemaIterator() {
-			this.halls.addAll(Cinema.this.program.keySet());
-		}
+		private int index = 0;
+		private ArrayList<ProgramPart> completeProgram = new ArrayList<ProgramPart>();
 
-		private ArrayList<Hall> halls = new ArrayList<Hall>();
-		private ArrayList<ProgramPart> hallProgramm = new ArrayList<ProgramPart>();
+		public CinemaIterator() {
+			for (ArrayList<ProgramPart> list : Cinema.this.program.values()) {
+				completeProgram.addAll(list);
+			}
+
+		}
 
 		/**
 		 * @see java.util.Iterator#hasNext()
 		 */
 		@Override
 		public boolean hasNext() {
-			if (this.halls.isEmpty() && this.hallProgramm.isEmpty()) {
-				return false;
+			if (index < completeProgram.size()) {
+				return true;
 			}
-			return true;
+			return false;
 		}
 
 		/**
@@ -215,14 +215,9 @@ public class Cinema implements Iterable<ProgramPart> {
 		@Override
 		public ProgramPart next() {
 			while (this.hasNext()) {
-				if (!this.hallProgramm.isEmpty()) {
-					ProgramPart next = this.hallProgramm.get(0);
-					hallProgramm.remove(0);
-					return next;
-				}
-				this.hallProgramm = Cinema.this.program.get(halls.get(0));
-				halls.remove(0);
-
+				ProgramPart next = this.completeProgram.get(index);
+				index++;
+				return next;
 			}
 			return null;
 		}

@@ -49,6 +49,17 @@ public class Time {
 		this.minutes = parse(time);
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (o instanceof Time) {
+			Time t = (Time) o;
+			if (t.minutes == this.minutes) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public int getTimeAsMinutes() {
 		return this.minutes;
 	}

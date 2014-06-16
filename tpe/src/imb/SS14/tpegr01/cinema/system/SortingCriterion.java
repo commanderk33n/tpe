@@ -1,8 +1,27 @@
 package imb.SS14.tpegr01.cinema.system;
 
+import imb.SS14.tpegr01.cinema.film.Film;
+
+import java.util.Comparator;
+
 public enum SortingCriterion {
-	Name(), Altersfreigabe(), Laufzeit();
-	// TODO
+	Name() {
+		public Comparator<Film> getComparator() {
+			return new Film.TitelComparator();
+		}
+	},
+	Altersfreigabe() {
+		public Comparator<Film> getComparator() {
+			return new Film.USKComparator();
+		}
+	},
+	Laufzeit() {
+		public Comparator<Film> getComparator() {
+			return new Film.DurationComparator();
+		}
+	};
+
+	public abstract Comparator<Film> getComparator();
 	// Auslesen aller Filme, die im Kino laufen als Array. Hierbei soll jeder
 	// Film nur einmal enthalten sein,
 	// auch wenn er zu mehreren Zeiten und in unterschiedliche Salen lauft

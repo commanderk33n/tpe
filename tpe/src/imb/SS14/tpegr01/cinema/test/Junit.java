@@ -2,6 +2,8 @@ package imb.SS14.tpegr01.cinema.test;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 import imb.SS14.tpegr01.cinema.Cinema;
@@ -122,5 +124,48 @@ public class Junit {
 			monnem = createExampleCinema();
 		}
 		assertEquals(example, monnem.toString());
+	}
+
+	@Test
+	public void CinemaIterable() {
+
+		Film batmanBegins = new Film("Batman Begins", 134, USK.ABZWOELF);
+		Film barbie = new Film("Barbie - Die Prinzessinnen-Akademie", 81,
+				USK.OHNEALT);
+		Film iceAge3 = new Film("Ice Age 3", 90, USK.OHNEALT);
+		Film machete = new Film("Machete", 100, USK.OHNEJUGEND);
+		Film trainspotting = new Film("Trainspotting", 89, USK.OHNEJUGEND);
+		Film pulpFiction = new Film("Pulp Fiction", 148, USK.ABSECHZEHN);
+		Film fromDusktillDawn = new Film("From Dusk till Dawn", 87,
+				USK.ABSECHZEHN);
+		Film chocolat = new Film("Chocolat", 121, USK.ABSECHS);
+
+		Cinema cinemaxx = createExampleCinema();
+
+		ProgramPart[] vergleich = { new ProgramPart(barbie, new Time("15:00")),
+				new ProgramPart(iceAge3, new Time("17:00")),
+				new ProgramPart(iceAge3, new Time("19:00")),
+				new ProgramPart(machete, new Time("21:00")),
+				new ProgramPart(iceAge3, new Time("15:00")),
+				new ProgramPart(trainspotting, new Time("17:00")),
+				new ProgramPart(pulpFiction, new Time("20:00")),
+				new ProgramPart(fromDusktillDawn, new Time("23:00")),
+				new ProgramPart(batmanBegins, new Time("14:00")),
+				new ProgramPart(batmanBegins, new Time("17:00")),
+				new ProgramPart(batmanBegins, new Time("20:00")),
+				new ProgramPart(batmanBegins, new Time("23:00")),
+				new ProgramPart(chocolat, new Time("20:00")),
+				new ProgramPart(trainspotting, new Time("23:00")) };
+
+		ProgramPart[] cinemaIterable = new ProgramPart[vergleich.length];
+		int index = 0;
+		for (ProgramPart p : cinemaxx) {
+			cinemaIterable[index] = p;
+			index++;
+		}
+		Arrays.sort(cinemaIterable);
+		Arrays.sort(vergleich);
+		assertTrue(Arrays.equals(vergleich, cinemaIterable));
+
 	}
 }

@@ -1,7 +1,8 @@
 package imb.SS14.tpegr01.cinema.film;
 
+import java.util.Comparator;
 
-public class Film {
+public class Film implements Comparable<Film> {
 	private String titel;
 	private int duration;
 	private USK usk;
@@ -44,10 +45,67 @@ public class Film {
 		this.usk = usk;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (o instanceof Film) {
+			Film p = (Film) o;
+			if (p.titel.equals(this.titel)) {
+				if (p.duration == this.duration) {
+					if (p.usk.equals(this.usk)) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
 	public String toString() {
 		String ausgabe = this.getTitel() + " [" + this.getUsk() + "] "
 				+ this.getDuration() + " min";
 		return ausgabe;
 	}
 
+	@Override
+	public int compareTo(Film o) {
+		return (this.titel.compareTo(o.titel));
+	}
+
+	public static class USKComparator implements Comparator<Film> {
+
+		@Override
+		public int compare(Film o, Film o2) {
+			if (o.usk.equals(o2.usk)) {
+				return 0;
+			}
+			if (o.usk.getUsk() < o2.usk.getUsk()) {
+				return -1;
+			}
+			return 1;
+		}
+
+	}
+
+	public static class TitelComparator implements Comparator<Film> {
+
+		@Override
+		public int compare(Film o, Film o2) {
+			return o.compareTo(o2);
+		}
+
+	}
+
+	public static class DurationComparator implements Comparator<Film> {
+
+		@Override
+		public int compare(Film o, Film o2) {
+			if (o.duration == o2.duration) {
+				return 0;
+			}
+			if (o.duration < o2.duration) {
+				return -1;
+			}
+			return 1;
+		}
+	}
 }
