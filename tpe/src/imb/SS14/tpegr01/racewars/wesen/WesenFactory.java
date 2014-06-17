@@ -1,7 +1,5 @@
 package imb.SS14.tpegr01.racewars.wesen;
 
-import imb.SS14.tpegr01.racewars.wesen.*;
-
 /**
  * Die Klasse <code>WesenFactory</code> erstellt Rassen mit gewünschter
  * Investition. Die Kosten für: Ork: 150 Mensch: 110 Untote: 70 Nachtelf: 145
