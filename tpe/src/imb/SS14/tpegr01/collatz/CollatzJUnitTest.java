@@ -71,6 +71,13 @@ public class CollatzJUnitTest {
 	}
 
 	@Test
+	public void findLongestSequence() {
+		CollatzRunner runner = new CollatzRunner();
+		runner.findLongestSequence(4);
+		assertTrue(runner.getLongestSequence().get(0) == 837799);
+	}
+
+	@Test
 	public void test25() {
 		ArrayList<Long> values = new ArrayList<Long>();
 		values.add((long) 25);
