@@ -3,6 +3,8 @@
  */
 package imb.SS14.tpegr01.cinema.program;
 
+import java.util.Comparator;
+
 import imb.SS14.tpegr01.cinema.film.Film;
 
 /**
@@ -70,4 +72,32 @@ public class ProgramPart implements Comparable<ProgramPart> {
 		}
 		return titelVergleich;
 	}
+
+	public static class ProgramPartTitelComparator implements
+			Comparator<ProgramPart> {
+
+		@Override
+		public int compare(ProgramPart o, ProgramPart o2) {
+			return o.compareTo(o2);
+		}
+
+	}
+
+	public static class ProgramPartStartingTimeComparator implements
+			Comparator<ProgramPart> {
+
+		@Override
+		public int compare(ProgramPart o, ProgramPart o2) {
+			int time1 = o.startingTime.getTimeAsMinutes();
+			int time2 = o2.startingTime.getTimeAsMinutes();
+			if (time1 == time2) {
+				return o.compareTo(o2);
+			}
+			if (time1 < time2) {
+				return -1;
+			}
+			return 1;
+		}
+	}
+
 }

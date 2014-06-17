@@ -1,5 +1,7 @@
 package imb.SS14.tpegr01.cinema;
 
+import java.util.Comparator;
+
 public class Hall {
 	private String name;
 	private int seats;
@@ -44,4 +46,20 @@ public class Hall {
 		this.seats = seats;
 	}
 
+	public static class HallComparator implements Comparator<Hall> {
+
+		@Override
+		public int compare(Hall o, Hall o2) {
+			int titelVergleich = o.name.compareTo(o2.name);
+
+			if (titelVergleich == 0) {
+				if (o.seats < o2.seats) {
+					return 1;
+				} else {
+					return -1;
+				}
+			}
+			return titelVergleich;
+		}
+	}
 }

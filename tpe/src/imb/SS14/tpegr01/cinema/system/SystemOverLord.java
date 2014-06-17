@@ -6,12 +6,19 @@ import imb.SS14.tpegr01.cinema.film.Film;
 import imb.SS14.tpegr01.cinema.program.ProgramPart;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class SystemOverLord {
-	private ArrayList<Cinema> cinemas = new ArrayList<Cinema>();
-	private static Scanner scan = new Scanner(System.in);
+	private ArrayList<Cinema> cinemas;
+
+	public SystemOverLord() {
+		this(new ArrayList<Cinema>());
+	}
+
+	public SystemOverLord(ArrayList<Cinema> arrayList) {
+		this.cinemas = arrayList;
+
+	}
 
 	public ArrayList<Cinema> getCinemas() {
 		return cinemas;
@@ -42,8 +49,10 @@ public class SystemOverLord {
 	 * @return Filme mit Ihren Anfangszeiten
 	 */
 	public ProgramPart[] getAllMoviesWithTimes(Cinema c) {
-		// TODO
-		return null;
+		if (c == null) {
+			return null;
+		}
+		return c.getAllMoviesWithTimes();
 	}
 
 	/**
@@ -52,8 +61,10 @@ public class SystemOverLord {
 	 * (getFilmeFuerSaalMitZeiten)
 	 */
 	public ProgramPart[] getMoviesForHallWithTimes(Cinema c, Hall h) {
-		// TODO
-		return null;
+		if (c == null) {
+			return null;
+		}
+		return c.getMoviesForHallWithTimes(h);
 	}
 
 	/**
@@ -68,9 +79,8 @@ public class SystemOverLord {
 	 *            Kino dessen Filme ausgelesen werden sollen
 	 * @return alle Filme eines Kinos
 	 */
-	public Film[] getAllmovies(Cinema c) {
-		// TODO
-		return null;
+	public Film[] getAllMovies(Cinema c) {
+		return c.getAllMovies();
 	}
 
 	/**
@@ -87,84 +97,25 @@ public class SystemOverLord {
 	 *            Angabe des anzuwendenen Sortierkriteriums
 	 * @return alle Filme eines Kinos
 	 */
-	public Film[] getAllmovies(Cinema c, SortingCriterion s) {
-		// TODO
-		return null;
+	public Film[] getAllMovies(Cinema c, SortingCriterion s) {
+		Film[] movies = getAllMovies(c);
+		Arrays.sort(movies, s.getComparator());
+		return movies;
+
 	}
 
-	public Cinema createCinema() {
-		System.out.println("Erstelle neues Kino");
-		System.out.println("Name des Kinos: ");
-		String name = scan.nextLine();
-		System.out.println("Stadt in der sich das Kino befindet: ");
-		String city = scan.nextLine();
-		Hall[] halls = createHalls();
+	public Cinema createCinema(String name, String city, Hall... halls) {
 		return new Cinema(name, city, halls);
 	}
 
-	/**
-	 * @return
-	 */
-	private Hall[] createHalls() {
-		ArrayList<Hall> halls = new ArrayList<Hall>();
-		Hall nextHall;
-		boolean weiter = true;
-		while (weiter) {
-			try {
-				nextHall = createHall();
-				halls.add(nextHall);
-				System.out.println(nextHall + " wurde hinzugefügt.");
-				System.out.println("Weiteren Saal erstellen? (Ja)");
-				String ja = scan.next().toUpperCase();
-				weiter = false;
-				if (ja.equals("JA")) {
-					weiter = true;
-				}
-				;
-			} catch (MyInputMismatchException e) {
-				System.out
-						.println("Fehler! Saal konnte nicht erstellt werden!");
-				System.out.println(e.getMessage());
-			} catch (InputMismatchException e) {
-				System.out
-						.println("Fehler! Saal konnte nicht erstellt werden!");
-			}
-		}
-		Hall[] hallsAsArray = new Hall[halls.size()];
-		for (int i = 0; i < halls.size(); i++) {
-			hallsAsArray[i] = halls.get(i);
-		}
-		return hallsAsArray;
-	}
-
-	private Hall createHall() throws MyInputMismatchException,
-			InputMismatchException {
-		System.out.println("Erstelle neuen Saal");
-		System.out.println("Name des Saals: ");
-		String name = scan.next();
-		name += scan.nextLine();
-		System.out.println("Anzahl der Sitze: ");
-		int seats = scan.nextInt();
-		if (seats < 1) {
-			throw new MyInputMismatchException(
-					"Es muss mindestens ein Platz im Saal vorhanden sein!");
-		}
+	public Hall createHall(String name, int seats) {
 		return (new Hall(name, seats));
 	}
 
-	private class MyInputMismatchException extends Exception {
-
-		private static final long serialVersionUID = 1L;
-
-		public MyInputMismatchException(String message) {
-			super(message);
-		}
-	}
-
-	public static void main(String[] args) {
-		SystemOverLord imperator = new SystemOverLord();
-		imperator.addCinema(imperator.createCinema());
-		imperator.addCinema(imperator.createCinema());
-		imperator.addCinema(imperator.createCinema());
-	}
+	// public static void main(String[] args) {
+	// SystemOverLord imperator = new SystemOverLord();
+	// imperator.addCinema(imperator.createCinema());
+	// imperator.addCinema(imperator.createCinema());
+	// imperator.addCinema(imperator.createCinema());
+	// }
 }

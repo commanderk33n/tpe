@@ -1,11 +1,15 @@
 package imb.SS14.tpegr01.cinema;
 
+import imb.SS14.tpegr01.cinema.film.Film;
 import imb.SS14.tpegr01.cinema.program.ProgramPart;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Cinema implements Iterable<ProgramPart> {
 
@@ -37,7 +41,7 @@ public class Cinema implements Iterable<ProgramPart> {
 		return false;
 	}
 
-	public void clearProgrammOfAHall(Hall hall) {
+	public void clearProgrammOfHall(Hall hall) {
 		if (program.containsKey(hall)) {
 			this.program.put(hall, new ArrayList<ProgramPart>());
 		}
@@ -91,7 +95,9 @@ public class Cinema implements Iterable<ProgramPart> {
 	}
 
 	public Hall[] getHalls() {
-		return (Hall[]) (program.keySet().toArray());
+		Hall[] halls = program.keySet().toArray(new Hall[0]);
+		Arrays.sort(halls, new Hall.HallComparator());
+		return halls;
 	}
 
 	/**
@@ -127,9 +133,10 @@ public class Cinema implements Iterable<ProgramPart> {
 	@Override
 	public String toString() {
 		String plan = this.name + " in " + this.city + "\n";
-		for (Hall hall : this.program.keySet()) {
+		Hall[] halls = getHalls();
+		for (Hall hall : halls) {
 			plan += hall.toString() + "\n";
-			for (ProgramPart program : this.program.get(hall)) {
+			for (ProgramPart program : getMoviesForHallWithTimes(hall)) {
 				plan += program.toString() + "\n";
 			}
 		}
@@ -146,8 +153,32 @@ public class Cinema implements Iterable<ProgramPart> {
 	 * @return Filme mit Ihren Anfangszeiten
 	 */
 	public ProgramPart[] getAllMoviesWithTimes() {
-		// TODO
-		return null;
+		ArrayList<ProgramPart> completeProgram = new ArrayList<ProgramPart>();
+		for (ArrayList<ProgramPart> list : Cinema.this.program.values()) {
+			completeProgram.addAll(list);
+		}
+		ProgramPart[] allMoviesWithTimes = (ProgramPart[]) completeProgram
+				.toArray(new ProgramPart[0]);
+		Arrays.sort(allMoviesWithTimes,
+				new ProgramPart.ProgramPartStartingTimeComparator());
+		return allMoviesWithTimes;
+	}
+
+	/**
+	 * Auslesen aller Filme, die im Kino laufen als Array. Hierbei soll jeder
+	 * Film nur einmal enthalten sein, auch wenn er zu mehreren Zeiten und in
+	 * unterschiedliche Sälen läuft. Die Filme nach dem Namen sortiert.
+	 * (getAlleFilme)
+	 * 
+	 * @return alle Filme des Kinos
+	 */
+	public Film[] getAllMovies() {
+		Set<Film> movies = new TreeSet<Film>();
+		for (ProgramPart p : this) {
+			movies.add(p.getFilm());
+		}
+
+		return movies.toArray(new Film[0]);
 	}
 
 	/**
@@ -157,10 +188,11 @@ public class Cinema implements Iterable<ProgramPart> {
 	 */
 	public ProgramPart[] getMoviesForHallWithTimes(Hall h) {
 		if (this.program.containsKey(h)) {
-			ProgramPart[] programOfh = (ProgramPart[]) this.program.get(h)
-					.toArray();
-			// TODO sortieren
-			return programOfh;
+			ProgramPart[] programOfHall = this.program.get(h).toArray(
+					new ProgramPart[0]);
+			Arrays.sort(programOfHall,
+					new ProgramPart.ProgramPartStartingTimeComparator());
+			return programOfHall;
 		}
 		return null;
 	}

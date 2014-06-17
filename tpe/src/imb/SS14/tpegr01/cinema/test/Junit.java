@@ -12,6 +12,8 @@ import imb.SS14.tpegr01.cinema.film.Film;
 import imb.SS14.tpegr01.cinema.film.USK;
 import imb.SS14.tpegr01.cinema.program.ProgramPart;
 import imb.SS14.tpegr01.cinema.program.Time;
+import imb.SS14.tpegr01.cinema.system.SortingCriterion;
+import imb.SS14.tpegr01.cinema.system.SystemOverLord;
 
 public class Junit {
 
@@ -111,23 +113,36 @@ public class Junit {
 				+ "17:00 -- Ice Age 3 [ohne Altersbeschränkung] 90 min\n"
 				+ "19:00 -- Ice Age 3 [ohne Altersbeschränkung] 90 min\n"
 				+ "21:00 -- Machete [keine Jugendfreigabe] 100 min\n"
+				+ "Saal 'Kellerloch' (30 Plaetze)\n"
+				+ "20:00 -- Chocolat [ab 6 Jahre] 121 min\n"
+				+ "23:00 -- Trainspotting [keine Jugendfreigabe] 89 min\n"
 				+ "Saal 'Studio' (150 Plaetze)\n"
 				+ "15:00 -- Ice Age 3 [ohne Altersbeschränkung] 90 min\n"
 				+ "17:00 -- Trainspotting [keine Jugendfreigabe] 89 min\n"
 				+ "20:00 -- Pulp Fiction [ab 16 Jahre] 148 min\n"
-				+ "23:00 -- From Dusk till Dawn [ab 16 Jahre] 87 min\n"
-				+ "Saal 'Kellerloch' (30 Plaetze)\n"
-				+ "20:00 -- Chocolat [ab 6 Jahre] 121 min\n"
-				+ "23:00 -- Trainspotting [keine Jugendfreigabe] 89 min\n";
+				+ "23:00 -- From Dusk till Dawn [ab 16 Jahre] 87 min\n";
 		Cinema monnem = createExampleCinema();
-		while (!monnem.toString().equals(example)) {
-			monnem = createExampleCinema();
-		}
 		assertEquals(example, monnem.toString());
 	}
 
 	@Test
 	public void CinemaIterable() {
+		Cinema cinemaxx = createExampleCinema();
+		ProgramPart[] compareArray = createArrayToCompare();
+		ProgramPart[] cinemaIterable = new ProgramPart[compareArray.length];
+		int index = 0;
+		for (ProgramPart p : cinemaxx) {
+			cinemaIterable[index] = p;
+			index++;
+		}
+
+		Arrays.sort(cinemaIterable);
+		Arrays.sort(compareArray);
+		assertTrue(Arrays.equals(compareArray, cinemaIterable));
+
+	}
+
+	public ProgramPart[] createArrayToCompare() {
 
 		Film batmanBegins = new Film("Batman Begins", 134, USK.ABZWOELF);
 		Film barbie = new Film("Barbie - Die Prinzessinnen-Akademie", 81,
@@ -140,9 +155,7 @@ public class Junit {
 				USK.ABSECHZEHN);
 		Film chocolat = new Film("Chocolat", 121, USK.ABSECHS);
 
-		Cinema cinemaxx = createExampleCinema();
-
-		ProgramPart[] vergleich = { new ProgramPart(barbie, new Time("15:00")),
+		ProgramPart[] compare = { new ProgramPart(barbie, new Time("15:00")),
 				new ProgramPart(iceAge3, new Time("17:00")),
 				new ProgramPart(iceAge3, new Time("19:00")),
 				new ProgramPart(machete, new Time("21:00")),
@@ -157,15 +170,49 @@ public class Junit {
 				new ProgramPart(chocolat, new Time("20:00")),
 				new ProgramPart(trainspotting, new Time("23:00")) };
 
-		ProgramPart[] cinemaIterable = new ProgramPart[vergleich.length];
-		int index = 0;
-		for (ProgramPart p : cinemaxx) {
-			cinemaIterable[index] = p;
-			index++;
-		}
-		Arrays.sort(cinemaIterable);
-		Arrays.sort(vergleich);
-		assertTrue(Arrays.equals(vergleich, cinemaIterable));
+		return compare;
+	}
 
+	@Test
+	public void getAllMoviesWithTimesTest() {
+		ProgramPart[] compare = createArrayToCompare();
+		Arrays.sort(compare,
+				new ProgramPart.ProgramPartStartingTimeComparator());
+		assertTrue(Arrays.equals(createExampleCinema().getAllMoviesWithTimes(),
+				compare));
+	}
+
+	@Test
+	public void getAllMoviesTest() {
+		Film[] compare = {
+				new Film("Batman Begins", 134, USK.ABZWOELF),
+				new Film("Barbie - Die Prinzessinnen-Akademie", 81, USK.OHNEALT),
+				new Film("Ice Age 3", 90, USK.OHNEALT),
+				new Film("Machete", 100, USK.OHNEJUGEND),
+				new Film("Trainspotting", 89, USK.OHNEJUGEND),
+				new Film("Pulp Fiction", 148, USK.ABSECHZEHN),
+				new Film("From Dusk till Dawn", 87, USK.ABSECHZEHN),
+				new Film("Chocolat", 121, USK.ABSECHS) };
+		Arrays.sort(compare);
+		assertTrue(Arrays.equals(createExampleCinema().getAllMovies(), compare));
+	}
+
+	@Test
+	public void getAllMoviesTestDiffrentSorted() {
+		Film[] compare = {
+				new Film("Batman Begins", 134, USK.ABZWOELF),
+				new Film("Barbie - Die Prinzessinnen-Akademie", 81, USK.OHNEALT),
+				new Film("Ice Age 3", 90, USK.OHNEALT),
+				new Film("Machete", 100, USK.OHNEJUGEND),
+				new Film("Trainspotting", 89, USK.OHNEJUGEND),
+				new Film("Pulp Fiction", 148, USK.ABSECHZEHN),
+				new Film("From Dusk till Dawn", 87, USK.ABSECHZEHN),
+				new Film("Chocolat", 121, USK.ABSECHS) };
+		Cinema c = createExampleCinema();
+		SystemOverLord imperator = new SystemOverLord();
+		imperator.addCinema(c);
+		Film[] moviesOfc = imperator.getAllMovies(c, SortingCriterion.Laufzeit);
+		Arrays.sort(compare, SortingCriterion.Laufzeit.getComparator());
+		assertTrue(Arrays.equals(moviesOfc, compare));
 	}
 }
