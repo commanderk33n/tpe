@@ -3,7 +3,14 @@ package imb.SS14.tpegr01.cinema.program;
 public class Time {
 
 	private int minutes;
-
+	
+	/**
+	 * Konstruktor - Setzen der Zeit.
+	 * Umwandlung des Formats "HH:MM" in Minuten durch
+	 * Methode <code>parse()</code>.
+	 * 
+	 * @param time String mit Format "HH:MM"
+	 */
 	public Time(String time) {
 		int minutesTest = parse(time);
 		if (minutesTest >= 0) {
@@ -11,6 +18,11 @@ public class Time {
 		}
 	}
 
+	/**
+	 * Konstruktor - Setzen der Zeit.
+	 * 
+	 * @param timeAsMinutes Zeit in Minuten.
+	 */
 	public Time(int timeAsMinutes) {
 		try {
 			if (timeAsMinutes >= 0) {
@@ -20,7 +32,7 @@ public class Time {
 						"Unzulässige Uhrzeit wurde eingegeben!");
 			}
 		} catch (IllegalTimeException e) {
-			System.out.println("Fehler: " + e.getMessage());
+			System.err.println("Fehler: " + e.getMessage());
 		}
 	}
 
@@ -40,11 +52,17 @@ public class Time {
 			}
 			return hour * 60 + minute;
 		} catch (IllegalTimeException e) {
-			System.out.println("Fehler: " + e.getMessage());
+			System.err.println("Fehler: " + e.getMessage());
 		}
 		return -1;
 	}
 
+	/**
+	 * Umwandlung des Formats "HH:MM" in Minuten durch
+	 * Methode <code>parse()</code>
+	 * 
+	 * @param time String im Format "HH:MM"
+	 */
 	public void setTime(String time) {
 		this.minutes = parse(time);
 	}
@@ -60,18 +78,30 @@ public class Time {
 		return false;
 	}
 
+	/**
+	 * @return Zeit in Minuten zurueckgeben.
+	 */
 	public int getTimeAsMinutes() {
 		return this.minutes;
 	}
 
+	/**
+	 * @return Nur die Stunden zurueckgeben.
+	 */
 	public int getHoursOnly() {
 		return (int) (this.minutes / 60);
 	}
 
+	/**
+	 * @return Nur die Minuten zurueckgeben.
+	 */
 	public int getMinutesOnly() {
 		return (this.minutes % 60);
 	}
 
+	/**
+	 * @return Zeit im Format "HH:MM" zurueckgeben.
+	 */
 	public String toString() {
 		String result = "" + (int) (this.minutes / 60) + ":";
 		if ((this.minutes % 60) < 10) {
