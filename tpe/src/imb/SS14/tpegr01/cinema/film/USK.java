@@ -1,5 +1,17 @@
 package imb.SS14.tpegr01.cinema.film;
 
+/**
+ * Enumeration-Klasse <code>USK</code> legt eindeutig die
+ * USK-Freigaben der Filme an.
+ * Attribut <code>usk</code> beinhaltet Zahl der Freigabe
+ * Attribut <code>text</code> beinhaltet Text zur Freigabe
+ * 	ohne Alterbeschraenkung - 0
+ * 	ab 6 Jahre - 6
+ * 	ab 12 Jahre - 12
+ * 	ab 16 Jahren - 16
+ * 	Keine Jugendfreigabe - 18
+ */
+
 public enum USK {
 	OHNEALT("ohne Altersbeschränkung", 0), ABSECHS("ab 6 Jahre", 6), ABZWOELF(
 			"ab 12 Jahre", 12), ABSECHZEHN("ab 16 Jahre", 16), OHNEJUGEND(
