@@ -2,10 +2,20 @@ package imb.SS14.tpegr01.cinema;
 
 import java.util.Comparator;
 
+/**
+ * Klasse <code>Hall</code> erzeugt und verwaltet die Saele.
+ */
+
 public class Hall {
 	private String name;
 	private int seats;
 
+	/**
+	 * Konstruktor erzeugt Saal mit Name und Anzahl
+	 * 
+	 * @param name Name des Saals
+	 * @param seats Anzahl der Plaetze
+	 */
 	public Hall(String name, int seats) {
 		this.setName(name);
 		this.setSeats(seats);
