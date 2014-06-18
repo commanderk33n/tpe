@@ -1,6 +1,10 @@
 package imb.SS14.tpegr01.cinema.program;
 
 public class Time {
+	
+	/**
+	 * Klasse <code>Time</code> verwaltet die Zeit.
+	 */
 
 	private int minutes;
 	
