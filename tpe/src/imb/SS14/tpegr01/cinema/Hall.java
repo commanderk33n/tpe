@@ -13,8 +13,10 @@ public class Hall {
 	/**
 	 * Konstruktor erzeugt Saal mit Name und Anzahl
 	 * 
-	 * @param name Name des Saals
-	 * @param seats Anzahl der Plaetze
+	 * @param name
+	 *            Name des Saals
+	 * @param seats
+	 *            Anzahl der Plaetze
 	 */
 	public Hall(String name, int seats) {
 		this.setName(name);
@@ -56,6 +58,13 @@ public class Hall {
 		this.seats = seats;
 	}
 
+	/**
+	 * Comparator zur Klasse Hall sortiert Säle nach Name und bei gleichem Namen
+	 * nach der Anzahl der Sitze
+	 * 
+	 * @author Philipp Siebert
+	 * 
+	 */
 	public static class HallComparator implements Comparator<Hall> {
 
 		@Override

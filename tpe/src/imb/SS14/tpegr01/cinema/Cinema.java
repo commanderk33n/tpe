@@ -11,12 +11,33 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+/**
+ * Die Klasse Cinema dient zur Verwaltung eines Kinos. Ein Object vom Typ Kino
+ * besitzt einen Namen, eine Stadt, in der sich das Kino befindet und beliebig
+ * viele Säle. Den Säälen könnnen Programme zugewiesen werden, ein Programm
+ * besteht aus einem Film und einer Startzeit. Die interene Speicherung besteht
+ * aus einer Map mit der der Säle als key eine ProgrammListe als value
+ * zugewiesen werden.
+ * 
+ * @author Philipp Siebert
+ * 
+ */
 public class Cinema implements Iterable<ProgramPart> {
 
 	private String name;
 	private String city;
 	private HashMap<Hall, ArrayList<ProgramPart>> program;
 
+	/**
+	 * Konstruktor zur Klasse Cinema
+	 * 
+	 * @param name
+	 *            Name, der dem Objekt zugewisen wird
+	 * @param city
+	 *            Stadt, in der sich das Kino befindet
+	 * @param halls
+	 *            Säle des Kinos
+	 */
 	public Cinema(String name, String city, Hall... halls) {
 		this.setName(name);
 		this.setCity(city);
@@ -26,6 +47,16 @@ public class Cinema implements Iterable<ProgramPart> {
 		}
 	}
 
+	/**
+	 * Fügt einem Saal ein neues Programm hinzu
+	 * 
+	 * @param hall
+	 *            der Saal dem das Programm zugewiesen werden soll
+	 * @param newProgramPart
+	 *            Programm das zugewiesen werden soll
+	 * @return true - falls hizufügen funktioniert, false falls ein Fehler
+	 *         aufgetreten ist.
+	 */
 	public boolean addProgramPart(Hall hall, ProgramPart newProgramPart) {
 		if (program.containsKey(hall)) {
 			ArrayList<ProgramPart> currentProgram = program.get(hall);
@@ -41,12 +72,21 @@ public class Cinema implements Iterable<ProgramPart> {
 		return false;
 	}
 
+	/**
+	 * löscht das gesamte Programm eines Saals
+	 * 
+	 * @param hall
+	 *            Saal dessen Programm gelöscht werden soll
+	 */
 	public void clearProgrammOfHall(Hall hall) {
 		if (program.containsKey(hall)) {
 			this.program.put(hall, new ArrayList<ProgramPart>());
 		}
 	}
 
+	/**
+	 * löscht das gesamte Programm des Kinos
+	 */
 	public void clearWholeProgramm() {
 		for (Hall hall : program.keySet()) {
 			this.program.put(hall, new ArrayList<ProgramPart>());
@@ -54,9 +94,15 @@ public class Cinema implements Iterable<ProgramPart> {
 	}
 
 	/**
+	 * Testet ob ein neues Programm zeitlich in eine bestehende ProgrammListe
+	 * hinzugefügt werden kann
+	 * 
 	 * @param currentProgram
+	 *            neues Programm
 	 * @param newProgramPart
-	 * @return
+	 *            bestehende ProgrammListe
+	 * @return true - falls hizufügen funktioniert, false falls ein Fehler
+	 *         aufgetreten ist.
 	 */
 	private void permitted(ArrayList<ProgramPart> currentProgram,
 			ProgramPart newProgramPart) throws IllegalProgrammTimeException {
@@ -185,6 +231,11 @@ public class Cinema implements Iterable<ProgramPart> {
 	 * Auslesen aller Filme in einem bestimmten Saal mit den entsprechenden
 	 * Anfangszeiten als Array. Die Filme sind nach der Startzeit sortiert.
 	 * (getFilmeFuerSaalMitZeiten)
+	 * 
+	 * @param h
+	 *            Saal dessen Filme ausgelesen werden
+	 * @return Filme mit ihren Anfangszeiten als Array nach der Startzeit
+	 *         sortiert
 	 */
 	public ProgramPart[] getMoviesForHallWithTimes(Hall h) {
 		if (this.program.containsKey(h)) {
@@ -201,23 +252,21 @@ public class Cinema implements Iterable<ProgramPart> {
 		this.name = name;
 	}
 
-	// sinnvolle Methode?!
-	public void setWholeProgramm(
-			HashMap<Hall, ArrayList<ProgramPart>> newProgram) {
-		this.program = newProgram;
-	}
-
 	private void setCity(String city) {
 		this.city = city;
 	}
 
-	// Implementieren Sie die Klasse Kino so, dass Objekte von ihr in einer
-	// foreach-Schleife verwendet werden
-	// können, um über das gesamte Programm zu iterieren (Film und
-	// Anfangszeit). Bei jedem Schleifendurchlauf
-	// soll ein Objekt zurückgegeben werden, dass die Startzeit und den Film
-	// enthält. Filme können
-	// doppelt vorkommen, wenn sie unterschiedliche Anfangszeiten haben.
+	/**
+	 * Implementieren Sie die Klasse Kino so, dass Objekte von ihr in einer
+	 * foreach-Schleife verwendet werden können, um über das gesamte Programm zu
+	 * iterieren (Film und Anfangszeit). Bei jedem Schleifendurchlauf soll ein
+	 * Objekt zurückgegeben werden, dass die Startzeit und den Film enthält.
+	 * Filme können doppelt vorkommen, wenn sie unterschiedliche Anfangszeiten
+	 * haben.
+	 * 
+	 * @author Philipp Siebert
+	 * 
+	 */
 	private class CinemaIterator implements Iterator<ProgramPart> {
 
 		private int index = 0;
@@ -265,6 +314,12 @@ public class Cinema implements Iterable<ProgramPart> {
 
 	}
 
+	/**
+	 * Fehler-Exception zum Abfangen von Falschen Zeiteingaben
+	 * 
+	 * @author Philipp Siebert
+	 * 
+	 */
 	public class IllegalProgrammTimeException extends Exception {
 
 		/**

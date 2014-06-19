@@ -2,6 +2,14 @@ package imb.SS14.tpegr01.cinema.film;
 
 import java.util.Comparator;
 
+/**
+ * Klasse Film - Ein Film besteht aus einem Titel, Dauer und einer
+ * Altersfreigabe. Die Klasse implementiert Comparable mit der Filme nach Titel
+ * sortiert werden.
+ * 
+ * @author Philipp Siebert
+ * 
+ */
 public class Film implements Comparable<Film> {
 	private String titel;
 	private int duration;
@@ -60,6 +68,7 @@ public class Film implements Comparable<Film> {
 		return false;
 	}
 
+	@Override
 	public String toString() {
 		String ausgabe = this.getTitel() + " [" + this.getUsk() + "] "
 				+ this.getDuration() + " min";
@@ -71,6 +80,13 @@ public class Film implements Comparable<Film> {
 		return (this.titel.compareTo(o.titel));
 	}
 
+	/**
+	 * Mit dem USKComparator können Filme nach ihrer Altersfreigabe sortiert
+	 * werden
+	 * 
+	 * @author Philipp Siebert
+	 * 
+	 */
 	public static class USKComparator implements Comparator<Film> {
 
 		@Override
@@ -86,6 +102,12 @@ public class Film implements Comparable<Film> {
 
 	}
 
+	/**
+	 * Mit dem TitelComparator können Filme nach ihrem Titel sortiert werden
+	 * 
+	 * @author Philipp Siebert
+	 * 
+	 */
 	public static class TitelComparator implements Comparator<Film> {
 
 		@Override
@@ -95,6 +117,13 @@ public class Film implements Comparable<Film> {
 
 	}
 
+	/**
+	 * Mit dem DurationComparator können Filme nach ihrem Dauer (n) sortiert
+	 * werden
+	 * 
+	 * @author Philipp Siebert
+	 * 
+	 */
 	public static class DurationComparator implements Comparator<Film> {
 
 		@Override

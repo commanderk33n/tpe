@@ -8,14 +8,26 @@ import java.util.Comparator;
 import imb.SS14.tpegr01.cinema.film.Film;
 
 /**
- * @author Philipp Siebert
+ * Die Klasse ProgrammPart dient als Programm-Objekt, diese besteht aus einem
+ * Film und einer Startzeit. Die Klasse implementiert Comparable mit nach Filmen
+ * sortiert wird.
  * 
+ * @author Philipp Siebert
  */
 public class ProgramPart implements Comparable<ProgramPart> {
 
 	private Film movie;
 	private Time startingTime;
 
+	/**
+	 * Konstruktor erstellt Programm-Objekte, diese besteht aus einem Film und
+	 * einer Startzeit.
+	 * 
+	 * @param movie
+	 *            Film
+	 * @param time
+	 *            Startzeit des Films
+	 */
 	public ProgramPart(Film movie, Time time) {
 		setFilm(movie);
 		setTime(time);
@@ -50,7 +62,21 @@ public class ProgramPart implements Comparable<ProgramPart> {
 		return false;
 	}
 
-	// 15:00 -- Ice Age 3 [ohne Altersbeschrankung] 90 min
+	/**
+	 * Ausgabe wie folgt :
+	 * <p>
+	 * <blockquote>
+	 * 
+	 * <pre>
+	 * 15:00 -- Ice Age 3 [ohne Altersbeschrankung] 90 min
+	 * </pre>
+	 * 
+	 * </blockquote>
+	 * </p>
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
 	public String toString() {
 		String ausgabe = startingTime.toString() + " -- " + movie.toString();
 		return ausgabe;
@@ -73,6 +99,13 @@ public class ProgramPart implements Comparable<ProgramPart> {
 		return titelVergleich;
 	}
 
+	/**
+	 * Mit dem ProgramPartTitelComparator können Filme nach ihrer Sartzeit
+	 * sortiert werden
+	 * 
+	 * @author Philipp Siebert
+	 * 
+	 */
 	public static class ProgramPartTitelComparator implements
 			Comparator<ProgramPart> {
 
@@ -83,6 +116,13 @@ public class ProgramPart implements Comparable<ProgramPart> {
 
 	}
 
+	/**
+	 * Mit dem ProgramPartStartingTimeComparator können Filme nach ihrer
+	 * Sartzeit sortiert werden
+	 * 
+	 * @author Philipp Siebert
+	 * 
+	 */
 	public static class ProgramPartStartingTimeComparator implements
 			Comparator<ProgramPart> {
 

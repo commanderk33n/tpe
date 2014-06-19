@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
+ * Die Klasse <code>CollatzRunner</code> findet die länsgte Collatz-Folge
+ * innerhalb eines bestimmten Startberreiches und kann dabei mehrere Threads
+ * verwenden.
+ * 
+ * 
  * @author Philipp Siebert
  * 
  */
@@ -26,9 +31,16 @@ public class CollatzRunner implements Runnable {
 		this(1000000);
 	}
 
-	public void findLongestSequence(int anzahlThreads) {
+	/**
+	 * findet die länsgte Collatz-Folge innerhalb eines bestimmten
+	 * Werteberreiches und kann dabei mehrere Threads verwenden.
+	 * 
+	 * @param numberOfThreads
+	 *            Anzahl der Threads die verwendet werden sollen
+	 */
+	public void findLongestSequence(int numberOfThreads) {
 		Date startZeit = new Date();
-		Thread[] threads = new Thread[anzahlThreads];
+		Thread[] threads = new Thread[numberOfThreads];
 		for (int i = 0; i < threads.length; i++) {
 			threads[i] = new Thread(this);
 		}
@@ -46,17 +58,32 @@ public class CollatzRunner implements Runnable {
 		Date endZeit = new Date();
 		index = 0;
 		long zeit = endZeit.getTime() - startZeit.getTime();
-		System.out.println("Mit " + anzahlThreads + " Thread(s) : " + zeit
+		System.out.println("Mit " + numberOfThreads + " Thread(s) : " + zeit
 				+ " ms");
 	}
 
-	public synchronized void compareToLongestSequence(ArrayList<Long> list) {
+	/**
+	 * Vergleicht die Collatz Folge mit der gespeicherten Folge und übernimmt
+	 * diese falls sie mehr elemente also länger ist
+	 * 
+	 * @param list
+	 *            neue Collatz Folge
+	 */
+	private synchronized void compareToLongestSequence(ArrayList<Long> list) {
 		if (longestSequence.size() < list.size()) {
 			longestSequence = list;
 		}
+//		System.out.println(Thread.currentThread().getName() + ": "
+//				+ list.get(0));
 	}
 
-	public synchronized long getNextStartingValue() {
+	/**
+	 * Gibt solange neue Startwerte für die Collatz Folge zurück wie der Index
+	 * kleiner ist als der angegebene Werteberreiche
+	 * 
+	 * @return neuer Startwert für die Collatz Folge
+	 */
+	private synchronized long getNextStartingValue() {
 		if (index < range) {
 			return index++;
 		} else {

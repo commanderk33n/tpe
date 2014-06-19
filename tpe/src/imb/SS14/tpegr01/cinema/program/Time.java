@@ -1,19 +1,19 @@
 package imb.SS14.tpegr01.cinema.program;
 
 public class Time {
-	
+
 	/**
 	 * Klasse <code>Time</code> verwaltet die Zeit.
 	 */
 
 	private int minutes;
-	
+
 	/**
-	 * Konstruktor - Setzen der Zeit.
-	 * Umwandlung des Formats "HH:MM" in Minuten durch
-	 * Methode <code>parse()</code>.
+	 * Konstruktor - Setzen der Zeit. Umwandlung des Formats "HH:MM" in Minuten
+	 * durch Methode <code>parse()</code>.
 	 * 
-	 * @param time String mit Format "HH:MM"
+	 * @param time
+	 *            String mit Format "HH:MM"
 	 */
 	public Time(String time) {
 		int minutesTest = parse(time);
@@ -25,7 +25,8 @@ public class Time {
 	/**
 	 * Konstruktor - Setzen der Zeit.
 	 * 
-	 * @param timeAsMinutes Zeit in Minuten.
+	 * @param timeAsMinutes
+	 *            Zeit in Minuten.
 	 */
 	public Time(int timeAsMinutes) {
 		try {
@@ -40,6 +41,12 @@ public class Time {
 		}
 	}
 
+	/**
+	 * Umwandlung des Formats "HH:MM" in Minuten
+	 * 
+	 * @param time
+	 *            String im Format "HH:MM"
+	 */
 	private int parse(String time) {
 		int index = time.indexOf(":");
 		int hour = Integer.valueOf(time.substring(0, index));
@@ -62,10 +69,11 @@ public class Time {
 	}
 
 	/**
-	 * Umwandlung des Formats "HH:MM" in Minuten durch
-	 * Methode <code>parse()</code>
+	 * Umwandlung des Formats "HH:MM" in Minuten durch Methode
+	 * <code>parse()</code>
 	 * 
-	 * @param time String im Format "HH:MM"
+	 * @param time
+	 *            String im Format "HH:MM"
 	 */
 	public void setTime(String time) {
 		this.minutes = parse(time);
@@ -115,6 +123,12 @@ public class Time {
 		return result;
 	}
 
+	/**
+	 * Fehler-Exception zum Abfangen von Falschen Zeiteingaben
+	 * 
+	 * @author Philipp Siebert
+	 * 
+	 */
 	public class IllegalTimeException extends Exception {
 
 		/**
